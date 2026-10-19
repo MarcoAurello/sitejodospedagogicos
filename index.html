@@ -151,6 +151,15 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .game p{opacity:.92;margin:0 0 .6rem}
 .game .btn{align-self:flex-start;background:#fff;color:#2a1030;margin-top:auto}
 .game .emoji{position:absolute;right:1.2rem;top:1rem;font-size:3.2rem;opacity:.25}
+/* miniatura da tela do jogo, ao lado do texto e do botão */
+.game:has(.tela){display:grid;grid-template-columns:1fr auto;column-gap:1.4rem;align-content:start}
+.game:has(.tela)>*:not(.tela){grid-column:1}
+.game:has(.tela) .emoji{display:none}
+.game .tela{grid-column:2;grid-row:1/span 4;align-self:center;display:block;width:clamp(104px,15vw,150px);padding:5px;border-radius:22px;background:#0b0f2e;box-shadow:0 0 0 2px rgba(255,255,255,.35),0 14px 26px rgba(10,5,30,.45);transform:rotate(3deg);transition:transform .2s}
+.game .tela:hover{transform:rotate(0) scale(1.04)}
+.game .tela img{display:block;width:100%;height:auto;border-radius:17px}
+.game.destaque .tela{width:clamp(118px,19vw,190px)}
+@media (max-width:560px){.game:has(.tela)>p:not(.tela),.game:has(.tela)>.btn:not(.tela){grid-column:1/-1}.game .tela,.game.destaque .tela{grid-row:1/span 2;width:96px;align-self:start}}
 
 /* Pricing */
 .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:2rem;align-items:stretch}
@@ -252,6 +261,7 @@ footer{padding:2rem 0 3rem;text-align:center;color:var(--muted);font-size:.9rem}
           <h3>My Day — English Academy</h3>
           <p>O aluno acompanha o dia de um personagem das 9h às 18h, consulta a agenda e escolhe a frase certa em inglês ou em português. Tem níveis fácil e difícil, cronômetro, pontuação e relatório em PDF com a correção hora a hora.</p>
           <a class="btn" href="https://routinesgame.vercel.app/" target="_blank" rel="noopener">▶ Jogar My Day</a>
+          <a class="tela" href="https://routinesgame.vercel.app/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="assets/telas/myday.webp" width="420" height="747" alt="Tela do My Day: relógio digital às 9h, agenda e frase certa em inglês marcada em verde" loading="lazy"></a>
         </article>
         <article class="game ana rv">
           <span class="emoji" aria-hidden="true">🔤</span>
@@ -259,6 +269,7 @@ footer{padding:2rem 0 3rem;text-align:center;color:var(--muted);font-size:.9rem}
           <h3>ABC da Tia ANA</h3>
           <p>A criança monta palavras arrastando letras, com a foto da Tia Ana, e gera um relatório com o tempo por peça e as dificuldades.</p>
           <a class="btn" href="https://abcdaana.vercel.app/" target="_blank" rel="noopener">▶ Jogar ABC da Tia ANA</a>
+          <a class="tela" href="https://abcdaana.vercel.app/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="assets/telas/abc.webp" width="420" height="747" alt="Tela do ABC da Tia ANA: foto de um bolo, a palavra BOLO para montar e letras coloridas" loading="lazy"></a>
         </article>
         <article class="game pleno rv">
           <span class="emoji" aria-hidden="true">🏆</span>
@@ -266,6 +277,7 @@ footer{padding:2rem 0 3rem;text-align:center;color:var(--muted);font-size:.9rem}
           <h3>Jogo de Ortografia do Pleno</h3>
           <p>Tem a logo do colégio, o mascote Plenix, missões com as palavras que a turma mais erra e relatório em PDF.</p>
           <a class="btn" href="https://marcoaurello.github.io/jogoOrtografia/" target="_blank" rel="noopener">▶ Jogar Ortografia do Pleno</a>
+          <a class="tela" href="https://marcoaurello.github.io/jogoOrtografia/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="assets/telas/ortografia.webp" width="420" height="747" alt="Tela do Jogo de Ortografia: mascote Plenix, figura de um vaso e a escolha entre S e SS" loading="lazy"></a>
         </article>
       </div>
     </div>
