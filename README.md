@@ -4,7 +4,8 @@ Página de apresentação dos aplicativos educacionais com jogos e relatórios
 para escolas, professores e psicopedagogos.
 
 - Site: https://marcoaurello.github.io/sitejodospedagogicos/
-- Jogos de exemplo: [ABC da Tia ANA](https://abcdaana.vercel.app/) e
+- Jogos de exemplo: [My Day — English Academy](https://marcoaurello.github.io/DailyRoutinesGame/),
+  [ABC da Tia ANA](https://abcdaana.vercel.app/) e
   [Jogo de Ortografia do Pleno](https://marcoaurello.github.io/jogoOrtografia/)
 - Contato: WhatsApp (81) 98550-3305
 
