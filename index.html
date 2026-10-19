@@ -251,21 +251,21 @@ footer{padding:2rem 0 3rem;text-align:center;color:var(--muted);font-size:.9rem}
           <span class="kicker">Novo · App de inglês para escola de idiomas</span>
           <h3>My Day — English Academy</h3>
           <p>O aluno acompanha o dia de um personagem das 9h às 18h, consulta a agenda e escolhe a frase certa em inglês ou em português. Tem níveis fácil e difícil, cronômetro, pontuação e relatório em PDF com a correção hora a hora.</p>
-          <a class="btn" data-vps="myday/" href="https://marcoaurello.github.io/DailyRoutinesGame/" target="_blank" rel="noopener">▶ Jogar My Day</a>
+          <a class="btn" href="https://routinesgame.vercel.app/" target="_blank" rel="noopener">▶ Jogar My Day</a>
         </article>
         <article class="game ana rv">
           <span class="emoji" aria-hidden="true">🔤</span>
           <span class="kicker">App para psicopedagoga</span>
           <h3>ABC da Tia ANA</h3>
           <p>A criança monta palavras arrastando letras, com a foto da Tia Ana, e gera um relatório com o tempo por peça e as dificuldades.</p>
-          <a class="btn" data-vps="abc/" href="https://abcdaana.vercel.app/" target="_blank" rel="noopener">▶ Jogar ABC da Tia ANA</a>
+          <a class="btn" href="https://abcdaana.vercel.app/" target="_blank" rel="noopener">▶ Jogar ABC da Tia ANA</a>
         </article>
         <article class="game pleno rv">
           <span class="emoji" aria-hidden="true">🏆</span>
           <span class="kicker">App estilo Duolingo para escola</span>
           <h3>Jogo de Ortografia do Pleno</h3>
           <p>Tem a logo do colégio, o mascote Plenix, missões com as palavras que a turma mais erra e relatório em PDF.</p>
-          <a class="btn" data-vps="ortografia/" href="https://marcoaurello.github.io/jogoOrtografia/" target="_blank" rel="noopener">▶ Jogar Ortografia do Pleno</a>
+          <a class="btn" href="https://marcoaurello.github.io/jogoOrtografia/" target="_blank" rel="noopener">▶ Jogar Ortografia do Pleno</a>
         </article>
       </div>
     </div>
@@ -411,13 +411,6 @@ footer{padding:2rem 0 3rem;text-align:center;color:var(--muted);font-size:.9rem}
   function onScroll(){ fab.classList.toggle('on', window.scrollY>window.innerHeight*.6); }
   window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
 })();
-</script>
-<script>
-  // Na VPS (pedagociagamificada.com.br ou srv2076329.hstgr.cloud) os jogos estão no mesmo servidor, em /myday/, /abc/ e /ortografia/.
-  // No GitHub Pages os botões continuam apontando para os endereços antigos.
-  if (!/github\.io$/.test(location.hostname)) {
-    document.querySelectorAll('a[data-vps]').forEach(function (a) { a.href = '/' + a.dataset.vps; a.removeAttribute('target'); });
-  }
 </script>
 </body>
 </html>
