@@ -4,7 +4,8 @@ Página de apresentação dos aplicativos educacionais com jogos e relatórios
 para escolas, professores e psicopedagogos.
 
 - Site: https://sitejodospedagogicos.vercel.app/
-- Jogos de exemplo (num carrossel): [Desafio das Peças com a Nágila](https://marcoaurello.github.io/jogoTabuleiro/),
+- Jogos de exemplo (num carrossel): [Let’s play with Mallu](https://marcoaurello.github.io/inglesdamallu/),
+  [Desafio das Peças com a Nágila](https://marcoaurello.github.io/jogoTabuleiro/),
   [My Day — English Academy](https://routinesgame.vercel.app/),
   [ABC da Tia ANA](https://abcdaana.vercel.app/) e
   [Jogo de Ortografia do Pleno](https://marcoaurello.github.io/jogoOrtografia/)
@@ -13,7 +14,7 @@ para escolas, professores e psicopedagogos.
 ## Na VPS (Dokploy)
 
 O `Dockerfile` serve a página na raiz do domínio. Os jogos ficam no mesmo servidor, cada um como uma aplicação do Dokploy:
-`/myday/` (DailyRoutinesGame), `/abc/` (jogoABC), `/ortografia/` (jogoOrtografia) e `/desafio/` (jogoTabuleiro).
+`/myday/` (DailyRoutinesGame), `/abc/` (jogoABC), `/ortografia/` (jogoOrtografia), `/desafio/` (jogoTabuleiro) e `/domino/` (inglesdamallu).
 
 ## Arquivos
 - `index.html`: a página (HTML e CSS num arquivo só).

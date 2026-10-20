@@ -153,6 +153,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .game.myday{background:linear-gradient(140deg,#2F3F9E,#141C4D)}
 .game.destaque{grid-column:1/-1}
 .game.desafio{background:linear-gradient(140deg,#1F7FB8,#1D2B4A)}
+.game.mallu{background:linear-gradient(140deg,#D12E39,#8F1B26)}
 /* carrossel dos jogos: um card por vez no celular, dois no computador */
 .carrossel{margin-top:2rem}
 .trilho{display:grid;grid-auto-flow:column;grid-auto-columns:100%;gap:1.2rem;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;overscroll-behavior-x:contain;padding-bottom:.2rem}
@@ -279,18 +280,26 @@ footer{padding:2rem 0 3rem;text-align:center;color:var(--muted);font-size:.9rem}
   <section id="jogos">
     <div class="wrap">
       <h2 class="rv">Jogos em funcionamento</h2>
-      <p class="lead rv">Quatro aplicativos reais: jogo de tabuleiro para neuropsicopedagoga, inglês para escola de idiomas, alfabetização para psicopedagoga e ortografia para escola. Deslize para ver todos e toque para jogar.</p>
+      <p class="lead rv">Cinco aplicativos reais: dominó de palavras para professora de inglês, jogo de tabuleiro para neuropsicopedagoga, inglês para escola de idiomas, alfabetização para psicopedagoga e ortografia para escola. Deslize para ver todos e toque para jogar.</p>
       <div class="carrossel rv" role="region" aria-roledescription="carrossel" aria-label="Jogos em funcionamento">
       <div class="trilho" id="trilho" tabindex="0">
-        <article class="game desafio" aria-roledescription="slide" aria-label="1 de 4">
+        <article class="game mallu" aria-roledescription="slide" aria-label="1 de 5">
+          <span class="emoji" aria-hidden="true">🁫</span>
+          <span class="kicker">Novo · App para professora de inglês</span>
+          <h3>Let’s play with Mallu</h3>
+          <p>Dominó de palavras inglês–português com 200 palavras que mais confundem os brasileiros. O aluno joga com 3 colegas virtuais, liga cada palavra à sua tradução e, quando erra, a Mallu explica com um exemplo. Modos Aprender, Desafio com medalhas e Professor, com relatório em PDF.</p>
+          <a class="btn" href="https://marcoaurello.github.io/inglesdamallu/" target="_blank" rel="noopener">▶ Jogar com a Mallu</a>
+          <a class="tela" href="https://marcoaurello.github.io/inglesdamallu/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="assets/telas/domino.webp" width="420" height="747" alt="Tela do dominó da Mallu: peças com palavras em inglês e português na mesa verde, com as pontas em destaque" loading="lazy"></a>
+        </article>
+        <article class="game desafio" aria-roledescription="slide" aria-label="2 de 5">
           <span class="emoji" aria-hidden="true">♟️</span>
-          <span class="kicker">Novo · App para neuropsicopedagoga</span>
+          <span class="kicker">App para neuropsicopedagoga</span>
           <h3>Desafio das Peças com a Nágila</h3>
           <p>Jogo de tabuleiro contra a Nágila ou entre duas pessoas: levar as 4 peças para o outro lado sem pular nem comer. Dois cronômetros e relatório em PDF de atenção, planejamento, controle inibitório e soluções diversas.</p>
           <a class="btn" href="https://marcoaurello.github.io/jogoTabuleiro/" target="_blank" rel="noopener">▶ Jogar Desafio das Peças</a>
           <a class="tela" href="https://marcoaurello.github.io/jogoTabuleiro/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="assets/telas/desafio.webp" width="420" height="747" alt="Tela do Desafio das Peças: tabuleiro azul com peças vermelhas e azuis numeradas e a Nágila ao lado" loading="lazy"></a>
         </article>
-        <article class="game myday" aria-roledescription="slide" aria-label="2 de 4">
+        <article class="game myday" aria-roledescription="slide" aria-label="3 de 5">
           <span class="emoji" aria-hidden="true">⏰</span>
           <span class="kicker">App de inglês para escola de idiomas</span>
           <h3>My Day — English Academy</h3>
@@ -298,7 +307,7 @@ footer{padding:2rem 0 3rem;text-align:center;color:var(--muted);font-size:.9rem}
           <a class="btn" href="https://routinesgame.vercel.app/" target="_blank" rel="noopener">▶ Jogar My Day</a>
           <a class="tela" href="https://routinesgame.vercel.app/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="assets/telas/myday.webp" width="420" height="747" alt="Tela do My Day: relógio digital às 9h, agenda e frase certa em inglês marcada em verde" loading="lazy"></a>
         </article>
-        <article class="game ana" aria-roledescription="slide" aria-label="3 de 4">
+        <article class="game ana" aria-roledescription="slide" aria-label="4 de 5">
           <span class="emoji" aria-hidden="true">🔤</span>
           <span class="kicker">App para psicopedagoga</span>
           <h3>ABC da Tia ANA</h3>
@@ -306,7 +315,7 @@ footer{padding:2rem 0 3rem;text-align:center;color:var(--muted);font-size:.9rem}
           <a class="btn" href="https://abcdaana.vercel.app/" target="_blank" rel="noopener">▶ Jogar ABC da Tia ANA</a>
           <a class="tela" href="https://abcdaana.vercel.app/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="assets/telas/abc.webp" width="420" height="747" alt="Tela do ABC da Tia ANA: foto de um bolo, a palavra BOLO para montar e letras coloridas" loading="lazy"></a>
         </article>
-        <article class="game pleno" aria-roledescription="slide" aria-label="4 de 4">
+        <article class="game pleno" aria-roledescription="slide" aria-label="5 de 5">
           <span class="emoji" aria-hidden="true">🏆</span>
           <span class="kicker">App estilo Duolingo para escola</span>
           <h3>Jogo de Ortografia do Pleno</h3>
