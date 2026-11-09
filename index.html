@@ -1,499 +1,840 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Pedagogia Gamificada · Aplicativos educacionais com jogos e relatórios</title>
-<meta name="description" content="Aplicativos educacionais com jogos e relatórios para escolas, professores e psicopedagogos. Aprender brincando e ensinar com dados.">
-<meta name="theme-color" content="#14456B">
-<link rel="icon" type="image/png" href="assets/favicon.png">
-<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-<link rel="canonical" href="https://marcoaurello.github.io/sitejodospedagogicos/">
-<!-- prévia ao compartilhar o link (WhatsApp, Instagram, Facebook) -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Games Pedagógicos · Jogos psicopedagógicos para crianças de 4 a 14 anos</title>
+<meta name="description" content="Mais de 30 jogos psicopedagógicos que treinam atenção, memória, raciocínio, controle da impulsividade e visão espacial, para crianças de 4 a 14 anos. Relatório para o professor e competições criadas a partir de uma foto do livro.">
+<meta property="og:title" content="Games Pedagógicos · Jogos que treinam o jeito de pensar">
+<meta property="og:description" content="Mais de 30 jogos psicopedagógicos para crianças de 4 a 14 anos, com relatório para o professor.">
+<meta property="og:image" content="assets/og-image.jpg">
 <meta property="og:type" content="website">
-<meta property="og:locale" content="pt_BR">
-<meta property="og:site_name" content="Pedagogia Gamificada">
-<meta property="og:title" content="Pedagogia Gamificada · Aplicativos educacionais com jogos e relatórios">
-<meta property="og:description" content="Jogos feitos para os seus conteúdos e um relatório que mostra onde cada aluno precisa de ajuda. Para escolas, professores e psicopedagogos.">
-<meta property="og:url" content="https://marcoaurello.github.io/sitejodospedagogicos/">
-<meta property="og:image" content="https://marcoaurello.github.io/sitejodospedagogicos/assets/og-image.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Logo da Pedagogia Gamificada: livro aberto com um controle de videogame e uma estrela">
-<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="stylesheet" href="assets/icones/fill.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
-  --navy:#14456B; --blue:#1E8FC7; --sky:#E6F3FA; --gold:#E3A72F; --gold-soft:#FFF4DC;
-  --bg:#F7FBFE; --surface:#FFFFFF; --text:#1C2B3A; --muted:#5A6B7C; --line:#D7E6F0;
-  --green:#1E9E4F; --pink:#C2185B; --purple:#5B2A86;
-  --shadow:0 10px 30px -12px rgba(20,69,107,.25);
-  color-scheme:light;
-  box-sizing:border-box;
-  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+  --navy:#13294B; --ink:#2B3A55; --muted:#5B6B85;
+  --blue:#1E88E5; --blue-soft:#E3F1FD;
+  --green:#2E9D4A; --green-soft:#E5F6EA;
+  --orange:#F28C18; --orange-soft:#FFF1DF;
+  --purple:#7B4FC9; --red:#E5484D;
+  --bg:#FFFFFF; --bg-alt:#F5F9FF; --card:#FFFFFF; --line:#DCE6F2;
+  --shadow:0 10px 30px rgba(19,41,75,.10);
+  --radius:20px;
 }
-@media (prefers-color-scheme:dark){
-  :root:not([data-theme="light"]){--navy:#9FD3F2; --blue:#4FB3E8; --sky:#12293B; --gold:#F2BE55; --gold-soft:#2B2414;
-    --bg:#0D1A26; --surface:#132433; --text:#E7F0F7; --muted:#9DB0C2; --line:#24394C;
-    --shadow:0 10px 30px -12px rgba(0,0,0,.6); color-scheme:dark}
-}
-:root[data-theme="dark"]{--navy:#9FD3F2; --blue:#4FB3E8; --sky:#12293B; --gold:#F2BE55; --gold-soft:#2B2414;
-    --bg:#0D1A26; --surface:#132433; --text:#E7F0F7; --muted:#9DB0C2; --line:#24394C;
-    --shadow:0 10px 30px -12px rgba(0,0,0,.6); color-scheme:dark}
-*,*::before,*::after{box-sizing:inherit}
-html{scroll-behavior:smooth; scroll-padding-top:env(safe-area-inset-top,0px)}
-body{margin:0;background:var(--bg);color:var(--text);font-family:'Nunito',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
-img{max-width:100%;height:auto;display:block}
-a{color:inherit}
-h1,h2,h3{font-family:'Fredoka','Nunito',system-ui,sans-serif;line-height:1.15;margin:0;color:var(--navy);font-weight:600}
-h2{font-size:clamp(1.7rem,4vw,2.4rem);margin-bottom:.6rem}
-h3{font-size:1.2rem}
-p{margin:0 0 1rem}
-.wrap{width:min(1120px,100% - 2.5rem);margin-inline:auto}
-section{padding:clamp(3.5rem,8vw,6rem) 0}
-.lead{color:var(--muted);font-size:1.08rem;max-width:62ch}
-:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:6px}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Nunito,system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;font-size:17px}
+img,video{max-width:100%;display:block}
+a{color:var(--blue)}
+h1,h2,h3{font-family:"Baloo 2",Nunito,sans-serif;color:var(--navy);line-height:1.15;margin:0 0 .4em}
+h1{font-size:clamp(2rem,5vw,3.3rem)}
+h2{font-size:clamp(1.7rem,3.6vw,2.5rem)}
+h3{font-size:1.25rem}
+p{margin:0 0 1em}
+:focus-visible{outline:3px solid var(--orange);outline-offset:3px;border-radius:8px}
+.wrap{max-width:1140px;margin:0 auto;padding:0 20px}
+section{padding:80px 0}
+.alt{background:var(--bg-alt)}
+.tag{display:inline-block;font-weight:800;font-size:.85rem;letter-spacing:.04em;text-transform:uppercase;color:var(--blue);background:var(--blue-soft);padding:6px 12px;border-radius:99px;margin-bottom:14px}
+.lead{font-size:1.15rem;color:var(--muted);max-width:720px}
+.center{text-align:center}.center .lead{margin-left:auto;margin-right:auto}
 
-/* pixel squares, like the logo */
-.px{position:absolute;width:14px;height:14px;background:var(--blue);opacity:.55;border-radius:2px}
-.px.g{background:var(--gold)}
-
-/* Header */
-header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:21;background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(10px)}
-.nav{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.6rem 0}
-.brand{display:flex;align-items:center;gap:.6rem;text-decoration:none;font-family:'Fredoka',sans-serif;font-weight:600;color:var(--navy);font-size:1.1rem}
-.brand img{width:42px;height:42px}
-.nav ul{display:flex;gap:1.4rem;list-style:none;margin:0;padding:0;font-weight:700;font-size:.95rem}
-.nav ul a{text-decoration:none;color:var(--muted)}
-.nav ul a:hover{color:var(--navy)}
-@media (max-width:820px){.nav ul{display:none}}
-@media (max-width:400px){.brand{font-size:.95rem}.brand img{width:36px;height:36px}}
-
-/* Buttons */
-.btn{white-space:nowrap;display:inline-flex;align-items:center;gap:.6rem;font-family:'Fredoka',sans-serif;font-weight:600;font-size:1.05rem;text-decoration:none;padding:.85rem 1.4rem;border-radius:999px;border:0;cursor:pointer;transition:transform .15s ease,box-shadow .15s ease;box-shadow:0 4px 0 rgba(0,0,0,.18)}
+/* Botões */
+.btn{display:inline-flex;align-items:center;gap:8px;font-weight:800;font-size:1rem;text-decoration:none;border-radius:14px;padding:14px 22px;border:0;cursor:pointer;transition:transform .15s, box-shadow .15s}
 .btn:hover{transform:translateY(-2px)}
-.btn:active{transform:translateY(2px);box-shadow:0 1px 0 rgba(0,0,0,.18)}
-.btn svg{width:22px;height:22px;flex:none}
-.btn-wa{background:var(--green);color:#fff}
-.btn-sm{padding:.55rem 1rem;font-size:.95rem}
-.btn-ghost{background:var(--surface);color:var(--navy);box-shadow:inset 0 0 0 2px var(--line),0 4px 0 var(--line)}
+.btn-main{background:var(--orange);color:#fff;box-shadow:0 5px 0 #C46D0A}
+.btn-main:active{transform:translateY(2px);box-shadow:0 2px 0 #C46D0A}
+.btn-line{background:#fff;color:var(--navy);border:2px solid var(--line)}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+
+/* Topo */
+header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.topo{display:flex;align-items:center;justify-content:space-between;gap:16px;height:68px}
+.marca{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:"Baloo 2";font-weight:800;color:var(--navy);font-size:1.2rem}
+.marca img{height:48px;width:auto}
+nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0}
+nav a{text-decoration:none;color:var(--ink);font-weight:700}
+nav a:hover{color:var(--blue)}
+.topo .btn{padding:10px 16px}
+@media (max-width:880px){nav{display:none}}
 
 /* Hero */
-.hero{position:relative;overflow:hidden;padding-top:clamp(2.5rem,6vw,4.5rem)}
-.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:3rem;align-items:center}
-@media (max-width:860px){.hero .logo-stage{order:-1;width:min(200px,55vw)}.hero-grid{grid-template-columns:1fr;text-align:center;gap:2rem}.hero .lead{margin-inline:auto}.hero-cta{justify-content:center}}
-.tag{display:inline-block;background:var(--gold-soft);color:var(--navy);font-weight:800;font-size:.85rem;padding:.35rem .8rem;border-radius:999px;margin-bottom:1rem}
-.hero h1{font-size:clamp(2.3rem,6vw,3.8rem);font-weight:700;margin-bottom:1rem}
-.hero h1 span{display:block;color:var(--blue)}
-.hero-points{list-style:none;padding:0;margin:1.2rem 0 0;display:grid;gap:.6rem;max-width:62ch}
-.hero-points li{display:flex;gap:.7rem;align-items:flex-start;background:var(--surface);border:2px solid var(--line);border-radius:14px;padding:.7rem .9rem;text-align:left}
-.hero-points li>span{font-size:1.3rem;line-height:1.3;flex:none}
-.hero-points p{margin:0;color:var(--muted);font-size:.98rem}
-.hero-points b{color:var(--navy)}
-@media (max-width:860px){.hero-points{margin-inline:auto}}
-.hero-cta{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.6rem}
-.logo-stage{position:relative;justify-self:center;width:min(380px,80vw);aspect-ratio:1}
-.logo-stage .ring{position:absolute;inset:-6%;border-radius:50%;border:3px dashed var(--blue);opacity:.35;animation:spin 40s linear infinite}
-.logo-stage img{position:relative;width:100%;height:100%;border-radius:50%;box-shadow:var(--shadow);background:#fff}
-@keyframes spin{to{transform:rotate(360deg)}}
+.hero{padding:60px 0 70px;background:radial-gradient(1200px 500px at 85% -10%,var(--blue-soft),transparent 60%),radial-gradient(800px 400px at -10% 110%,var(--green-soft),transparent 60%)}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+.hero h1 em{font-style:normal;color:var(--orange)}
+.selos{display:flex;flex-wrap:wrap;gap:10px 18px;margin-top:22px;color:var(--muted);font-weight:700;font-size:.95rem}
+@media (max-width:900px){.hero .wrap{grid-template-columns:1fr}}
 
-/* XP bar (signature element) */
-.xp{margin-top:2rem;background:var(--surface);border:2px solid var(--line);border-radius:18px;padding:1rem 1.2rem;max-width:520px;box-shadow:var(--shadow)}
-@media (max-width:860px){.xp{margin-inline:auto;text-align:left}}
-.xp-top{display:flex;justify-content:space-between;font-weight:800;font-size:.92rem;color:var(--muted);margin-bottom:.5rem}
-.xp-top b{color:var(--navy)}
-.xp-bar{height:16px;border-radius:999px;background:var(--sky);overflow:hidden}
-.xp-fill{height:100%;width:0;border-radius:999px;background:linear-gradient(90deg,var(--blue),var(--gold));transition:width 1.6s cubic-bezier(.2,.8,.2,1)}
-.xp-steps{display:flex;gap:.4rem;margin-top:.7rem;flex-wrap:wrap}
-.xp-steps span{font-size:.8rem;font-weight:700;padding:.2rem .6rem;border-radius:999px;background:var(--sky);color:var(--navy)}
+/* Celular demonstrativo do hero */
+.celular{width:300px;max-width:100%;margin:0 auto;background:var(--navy);border-radius:40px;padding:12px;box-shadow:0 30px 60px rgba(19,41,75,.25)}
+.tela{background:#fff;border-radius:30px;height:540px;overflow:hidden;position:relative}
+.etapa{position:absolute;inset:0;padding:22px 18px;opacity:0;transform:translateY(12px);transition:opacity .5s, transform .5s}
+.etapa.ativa{opacity:1;transform:none}
+.etapa .titulo-tela{font-family:"Baloo 2";font-weight:800;color:var(--navy);font-size:1.1rem;margin-bottom:12px}
+.pagina-livro{border:2px dashed var(--line);border-radius:14px;padding:14px;background:#FFFBF2;font-size:.78rem;color:#7a6a4a;line-height:1.5}
+.pagina-livro b{display:block;color:#5a4a2a;font-size:.9rem;margin-bottom:6px}
+.linha-txt{height:7px;border-radius:4px;background:#EADFC8;margin:6px 0}
+.botao-foto{margin:18px auto 0;width:64px;height:64px;border-radius:50%;background:var(--orange);display:grid;place-items:center;font-size:1.8rem;box-shadow:0 5px 0 #C46D0A}
+.gerando{display:flex;align-items:center;gap:8px;font-weight:800;color:var(--purple);font-size:.9rem;margin-bottom:10px}
+.pergunta{border:2px solid var(--line);border-radius:12px;padding:10px 12px;margin-bottom:8px;font-size:.82rem;font-weight:700;color:var(--navy)}
+.pergunta span{display:block;font-weight:600;color:var(--green);font-size:.78rem;margin-top:2px}
+.rank{list-style:none;padding:0;margin:0}
+.rank li{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:12px;margin-bottom:8px;background:var(--bg-alt);font-weight:800;color:var(--navy);font-size:.9rem}
+.rank li:first-child{background:#FFF4D6}
+.rank .pts{margin-left:auto;color:var(--blue)}
+.indicadores{display:flex;justify-content:center;gap:8px;margin-top:16px}
+.indicadores span{width:9px;height:9px;border-radius:50%;background:var(--line);transition:background .3s, width .3s}
+.indicadores span.ativa{background:var(--orange);width:26px;border-radius:9px}
 
-/* Quote */
-.quote{background:var(--navy);color:#fff;border-radius:28px;padding:clamp(1.8rem,5vw,3rem);position:relative;overflow:hidden}
-@media (prefers-color-scheme:dark){.quote{background:#173F5E}}
-.quote p{font-family:'Fredoka',sans-serif;font-size:clamp(1.25rem,3vw,1.75rem);line-height:1.35;margin:0;max-width:30ch;font-weight:500}
-.quote small{display:block;margin-top:1rem;opacity:.8;font-size:1rem;font-family:'Nunito',sans-serif;max-width:60ch}
-.quote .px{opacity:.8}
+/* Passos */
+.passos{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px;counter-reset:p}
+.passo{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow);position:relative}
+.passo::before{counter-increment:p;content:counter(p);position:absolute;top:-18px;left:24px;width:40px;height:40px;border-radius:12px;background:var(--blue);color:#fff;font-family:"Baloo 2";font-weight:800;font-size:1.3rem;display:grid;place-items:center}
+.passo:nth-child(2)::before{background:var(--purple)}
+.passo:nth-child(3)::before{background:var(--orange)}
+.passo .ico{font-size:2.2rem;margin:8px 0 6px}
+.passo p{color:var(--muted);margin:0}
+@media (max-width:860px){.passos{grid-template-columns:1fr;gap:34px}}
 
-/* Benefits */
-.benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2rem}
-@media (max-width:900px){.benefits{grid-template-columns:1fr 1fr}}
-@media (max-width:600px){.benefits{grid-template-columns:1fr}}
-.benefit{background:var(--surface);border:2px solid var(--line);border-radius:20px;padding:1.4rem}
-.benefit.big{grid-column:span 2;background:var(--gold-soft);border-color:transparent}
-@media (max-width:600px){.benefit.big{grid-column:auto}}
-.benefit .ico{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;font-size:1.5rem;background:var(--sky);margin-bottom:.8rem}
-.benefit.big .ico{background:var(--surface)}
-.benefit h3{margin-bottom:.4rem}
-.benefit p{margin:0;color:var(--muted)}
+/* Vídeos e fotos (o arquivo entra no lugar do quadro tracejado quando existir) */
+.midia{border-radius:var(--radius);overflow:hidden;background:var(--navy);aspect-ratio:16/9;position:relative;box-shadow:var(--shadow)}
+.midia.vertical{aspect-ratio:9/16;max-width:320px;margin:0 auto}
+.midia.foto{aspect-ratio:4/3;background:var(--bg-alt)}
+.midia video,.midia img{width:100%;height:100%;object-fit:cover}
+.midia .vazio{position:absolute;inset:0;display:none;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:6px;padding:20px;border:3px dashed var(--line);border-radius:var(--radius);background:var(--bg-alt);color:var(--muted);font-weight:700;font-size:.92rem}
+.midia .vazio b{color:var(--navy);font-size:1.05rem}
+.midia .vazio code{font-size:.8rem;background:#fff;padding:2px 8px;border-radius:6px}
+.midia.sem-arquivo .vazio{display:flex}
+.midia.sem-arquivo video,.midia.sem-arquivo img{display:none}
+.duas{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+@media (max-width:860px){.duas{grid-template-columns:1fr;gap:32px}}
+.lista-check{list-style:none;padding:0;margin:0}
+.lista-check li{padding-left:34px;position:relative;margin-bottom:14px}
+.lista-check li::before{content:"✔";position:absolute;left:0;top:1px;width:24px;height:24px;border-radius:50%;background:var(--green-soft);color:var(--green);font-weight:800;font-size:.8rem;display:grid;place-items:center}
 
-/* Report */
-.report{background:var(--sky)}
-.report-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:start}
-@media (max-width:860px){.report-grid{grid-template-columns:1fr}}
-.report-img{border-radius:18px;overflow:hidden;box-shadow:var(--shadow);border:6px solid var(--surface);background:#fff}
-.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:.8rem;margin:1.4rem 0}
-.stat{background:var(--surface);border-radius:16px;padding:1rem}
-.stat b{display:block;font-family:'Fredoka',sans-serif;font-size:1.9rem;color:var(--navy);line-height:1}
-.stat span{font-size:.9rem;color:var(--muted);font-weight:700}
-.finds{list-style:none;padding:0;margin:0 0 1rem;display:grid;gap:.5rem}
-.finds li{display:flex;gap:.6rem;align-items:flex-start;background:var(--surface);border-radius:12px;padding:.7rem .9rem;font-weight:600}
-.finds li::before{content:"";flex:none;width:10px;height:10px;margin-top:.5rem;border-radius:2px;background:var(--gold)}
-.focus{background:var(--navy);color:#fff;border-radius:16px;padding:1rem 1.2rem;font-weight:700}
-@media (prefers-color-scheme:dark){.focus{background:#173F5E}}
+/* Competição justa */
+.justa{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:36px}
+.justa div{background:#fff;border-radius:16px;padding:20px;border:1px solid var(--line)}
+.justa .ico{font-size:1.8rem}
+.justa h3{font-size:1.05rem;margin:6px 0 4px}
+.justa p{font-size:.92rem;color:var(--muted);margin:0}
+@media (max-width:900px){.justa{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.justa{grid-template-columns:1fr}}
 
-/* Examples */
-.games{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-top:2rem}
-@media (max-width:760px){.games{grid-template-columns:1fr}}
-.game{border-radius:24px;padding:1.8rem;color:#fff;display:flex;flex-direction:column;gap:.6rem;position:relative;overflow:hidden}
-.game.ana{background:linear-gradient(140deg,#C2185B,#8E1245)}
-.game.pleno{background:linear-gradient(140deg,#6A2F99,#43206A)}
-.game.myday{background:linear-gradient(140deg,#2F3F9E,#141C4D)}
-.game.destaque{grid-column:1/-1}
-.game.desafio{background:linear-gradient(140deg,#1F7FB8,#1D2B4A)}
-.game.mallu{background:linear-gradient(140deg,#D12E39,#8F1B26)}
-/* carrossel dos jogos: um card por vez no celular, dois no computador */
-.carrossel{margin-top:2rem}
-.trilho{display:grid;grid-auto-flow:column;grid-auto-columns:100%;gap:1.2rem;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;overscroll-behavior-x:contain;padding-bottom:.2rem}
-.trilho::-webkit-scrollbar{display:none}
-.trilho>.game{scroll-snap-align:start}
-@media (min-width:900px){.trilho{grid-auto-columns:calc(50% - .6rem)}}
-.carrossel-ctrl{display:flex;align-items:center;justify-content:center;gap:1rem;margin-top:1.1rem}
-.seta{width:48px;height:48px;border-radius:50%;border:2px solid var(--line);background:var(--surface);color:var(--navy);font-size:1.6rem;line-height:1;cursor:pointer;display:grid;place-items:center;box-shadow:0 3px 0 var(--line)}
-.seta:disabled{opacity:.35;cursor:default}
-.pontos{display:flex;gap:.5rem}
-.pontos button{width:12px;height:12px;padding:0;border-radius:999px;border:0;background:var(--line);cursor:pointer;transition:width .2s,background .2s}
-.pontos button[aria-current="true"]{width:30px;background:var(--blue)}
-@media (prefers-reduced-motion:reduce){.trilho{scroll-behavior:auto}}
-.game .kicker{font-weight:800;font-size:.85rem;opacity:.85}
-.game h3{color:#fff;font-size:1.55rem}
-.game p{opacity:.92;margin:0 0 .6rem}
-.game .btn{align-self:flex-start;background:#fff;color:#2a1030;margin-top:auto}
-.game .emoji{position:absolute;right:1.2rem;top:1rem;font-size:3.2rem;opacity:.25}
-/* miniatura da tela do jogo, ao lado do texto e do botão */
-.game:has(.tela){display:grid;grid-template-columns:1fr auto;column-gap:1.4rem;align-content:start}
-.game:has(.tela)>*:not(.tela){grid-column:1}
-.game:has(.tela) .emoji{display:none}
-.game .tela{grid-column:2;grid-row:1/span 4;align-self:center;display:block;width:clamp(104px,15vw,150px);padding:5px;border-radius:22px;background:#0b0f2e;box-shadow:0 0 0 2px rgba(255,255,255,.35),0 14px 26px rgba(10,5,30,.45);transform:rotate(3deg);transition:transform .2s}
-.game .tela:hover{transform:rotate(0) scale(1.04)}
-.game .tela img{display:block;width:100%;height:auto;border-radius:17px}
-.game.destaque .tela{width:clamp(118px,19vw,190px)}
-@media (max-width:560px){.game:has(.tela)>p:not(.tela),.game:has(.tela)>.btn:not(.tela){grid-column:1/-1}.game .tela,.game.destaque .tela{grid-row:1/span 2;width:96px;align-self:start}}
+/* Habilidades */
+.habs{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:40px}
+.hab{background:#fff;border-radius:var(--radius);padding:22px;border-top:6px solid var(--c);box-shadow:var(--shadow)}
+.hab .ico{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;font-size:1.6rem;background:color-mix(in srgb,var(--c) 14%,#fff)}
+.hab h3{margin:12px 0 2px;font-size:1.12rem}
+.hab .crianca{font-size:.82rem;font-weight:800;color:var(--c);margin-bottom:8px}
+.hab p{font-size:.92rem;color:var(--muted);margin:0 0 10px}
+.hab .ex{font-size:.82rem;font-weight:700;color:var(--ink);background:var(--bg-alt);border-radius:10px;padding:8px 10px}
+@media (max-width:1000px){.habs{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.habs{grid-template-columns:1fr}}
 
-/* Pricing */
-.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:2rem;align-items:stretch}
-@media (max-width:860px){.plans{grid-template-columns:1fr}}
-.plan{background:var(--surface);border:2px solid var(--line);border-radius:24px;padding:1.6rem;display:flex;flex-direction:column}
-.plan.hl{border-color:var(--blue);box-shadow:var(--shadow);position:relative}
-.plan.hl::before{content:"Mais escolhido";position:absolute;top:-.8rem;left:1.4rem;background:var(--blue);color:#fff;font-size:.8rem;font-weight:800;padding:.2rem .7rem;border-radius:999px}
-.plan h3{font-size:1.15rem;color:var(--muted)}
-.price{font-family:'Fredoka',sans-serif;font-size:2.1rem;font-weight:700;color:var(--navy);margin:.3rem 0 .8rem;line-height:1.1}
-.price small{font-size:1rem;color:var(--muted);font-weight:500}
-.plan ul{list-style:none;padding:0;margin:0 0 1.2rem;display:grid;gap:.45rem;color:var(--muted)}
-.plan li{padding-left:1.6rem;position:relative}
-.plan li::before{content:"★";position:absolute;left:0;color:var(--gold)}
-.plan .btn{margin-top:auto;justify-content:center}
-.note{color:var(--muted);margin-top:1.2rem;font-size:.95rem}
+/* Idades */
+.idades{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:40px}
+.idade{border-radius:var(--radius);padding:26px;background:var(--bg-alt);border:1px solid var(--line)}
+.idade .faixa{font-family:"Baloo 2";font-weight:800;font-size:2rem;color:var(--c)}
+.idade h3{margin:0 0 8px}
+.idade ul{margin:0;padding-left:18px;color:var(--muted);font-size:.95rem}
+@media (max-width:860px){.idades{grid-template-columns:1fr}}
 
-/* Steps (real sequence) */
-.steps{list-style:none;padding:0;margin:2rem 0 0;display:grid;grid-template-columns:repeat(5,1fr);gap:.8rem;counter-reset:s}
-@media (max-width:900px){.steps{grid-template-columns:1fr}}
-.steps li{counter-increment:s;background:var(--surface);border:2px solid var(--line);border-radius:18px;padding:1.1rem;font-weight:700}
-.steps li::before{content:"Fase " counter(s);display:block;font-family:'Fredoka',sans-serif;color:var(--blue);font-size:.95rem;margin-bottom:.3rem}
-.steps li span{display:block;font-weight:400;color:var(--muted);font-size:.95rem;margin-top:.2rem}
-.lgpd{margin-top:1.2rem;display:flex;gap:.7rem;align-items:flex-start;background:var(--gold-soft);border-radius:16px;padding:1rem 1.2rem}
+/* Carrossel de jogos */
+.carrossel{position:relative;margin-top:36px}
+.faixa-jogos{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:6px 4px 20px;scrollbar-width:none}
+.faixa-jogos::-webkit-scrollbar{display:none}
+.jogo{flex:0 0 calc((100% - 40px)/3);scroll-snap-align:start;background:#fff;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);border:1px solid var(--line);display:flex;flex-direction:column}
+.jogo img{width:100%;aspect-ratio:368/300;object-fit:cover;background:var(--bg-alt)}
+.jogo .corpo{padding:18px 20px 22px;display:flex;flex-direction:column;gap:8px;flex:1}
+.jogo h3{margin:0;font-size:1.15rem}
+.jogo p{margin:0;font-size:.93rem;color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:6px}
+.chip{font-size:.78rem;font-weight:800;padding:4px 10px;border-radius:99px;background:var(--bg-alt);color:var(--navy)}
+@media (max-width:900px){.jogo{flex-basis:calc((100% - 20px)/2)}}
+@media (max-width:600px){.jogo{flex-basis:85%}}
+.setas{display:flex;justify-content:center;align-items:center;gap:14px;margin-top:6px}
+.seta{width:46px;height:46px;border-radius:50%;border:2px solid var(--line);background:#fff;font-size:1.3rem;color:var(--navy);cursor:pointer;font-weight:800}
+.seta:hover{border-color:var(--blue);color:var(--blue)}
+.pontos{display:flex;gap:6px}
+.pontos button{width:9px;height:9px;padding:0;border-radius:50%;border:0;background:var(--line);cursor:pointer;transition:width .3s, background .3s}
+.pontos button[aria-current="true"]{background:var(--blue);width:24px;border-radius:9px}
 
-/* CTA */
-.cta{text-align:center;position:relative;overflow:hidden;background:var(--navy);color:#fff;border-radius:32px;padding:clamp(2.2rem,6vw,4rem) 1.5rem}
-@media (prefers-color-scheme:dark){.cta{background:#173F5E}}
-.cta h2{color:#fff}
-.cta img{width:96px;height:96px;margin:0 auto 1rem;border-radius:50%;background:#fff}
-.cta p{opacity:.9;max-width:48ch;margin:0 auto 1.6rem}
-.cta .phone{display:block;margin-top:1rem;font-weight:800;opacity:.9}
+/* Galeria de fotos */
+.galeria{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:36px}
+@media (max-width:760px){.galeria{grid-template-columns:1fr}}
 
-footer{padding:2rem 0 3rem;text-align:center;color:var(--muted);font-size:.9rem}
+/* Relatório */
+.relatorio{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);padding:26px;border:1px solid var(--line)}
+.relatorio .kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:16px}
+.relatorio .kpi{background:var(--bg-alt);border-radius:14px;padding:12px;text-align:center}
+.relatorio .kpi b{display:block;font-family:"Baloo 2";font-size:1.6rem;color:var(--navy);line-height:1}
+.relatorio .kpi small{color:var(--muted);font-weight:700;font-size:.78rem}
+.barra{margin:10px 0}
+.barra small{display:flex;justify-content:space-between;font-weight:700;font-size:.85rem}
+.barra div{height:10px;border-radius:6px;background:var(--bg-alt);overflow:hidden;margin-top:4px}
+.barra i{display:block;height:100%;border-radius:6px;background:var(--c)}
+.foco{margin-top:14px;background:var(--orange-soft);border-radius:12px;padding:12px 14px;font-weight:700;font-size:.92rem}
 
-/* Floating WhatsApp */
-.fab{position:fixed;right:1rem;bottom:calc(1rem + env(safe-area-inset-bottom,0px));z-index:30;width:60px;height:60px;border-radius:50%;background:var(--green);display:grid;place-items:center;box-shadow:0 8px 20px rgba(0,0,0,.25);transform:scale(0);transition:transform .25s ease}
-.fab.on{transform:scale(1)}
-.fab svg{width:32px;height:32px;fill:#fff}
+/* Para quem */
+.publico{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:36px}
+.publico div{border-radius:var(--radius);padding:26px;background:#fff;border:1px solid var(--line)}
+.publico .ico{font-size:2rem}
+.publico p{color:var(--muted);font-size:.95rem;margin:0}
+@media (max-width:860px){.publico{grid-template-columns:1fr}}
 
-/* Reveal */
-.rv{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
-.rv.in{opacity:1;transform:none}
-@media (prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto}
-  .rv{opacity:1;transform:none;transition:none}
-  .logo-stage .ring{animation:none}
-  .xp-fill{transition:none}
-  .btn,.fab{transition:none}
-}
+/* FAQ */
+.faq{max-width:780px;margin:36px auto 0}
+.faq details{background:#fff;border:1px solid var(--line);border-radius:14px;margin-bottom:10px;padding:0 20px}
+.faq summary{cursor:pointer;font-weight:800;color:var(--navy);padding:18px 0;list-style:none;display:flex;justify-content:space-between;gap:12px}
+.faq summary::after{content:"+";font-size:1.4rem;line-height:1;color:var(--blue)}
+.faq details[open] summary::after{content:"–"}
+.faq details p{color:var(--muted);margin:0 0 18px}
+
+/* Chamada final */
+.final{background:linear-gradient(135deg,var(--navy),#1D4E89);color:#fff;text-align:center}
+.final h2{color:#fff}
+.final p{color:#CFE0F5;font-size:1.15rem}
+.final .btns{justify-content:center}
+.final .btn-line{background:transparent;color:#fff;border-color:rgba(255,255,255,.4)}
+footer{background:#0D1D36;color:#9FB3CF;font-size:.9rem;padding:28px 0}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+footer a{color:#CFE0F5}
+
+/* WhatsApp flutuante */
+.zap{position:fixed;right:18px;bottom:18px;z-index:30;width:58px;height:58px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 8px 20px rgba(0,0,0,.2);opacity:0;pointer-events:none;transform:scale(.8);transition:.25s}
+.zap.mostrar{opacity:1;pointer-events:auto;transform:none}
+.zap svg{width:30px;height:30px;fill:#fff}
+
+/* Aparecer ao rolar */
+.revelar{opacity:0;transform:translateY(18px);transition:opacity .6s, transform .6s}
+.revelar.visivel{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}.revelar{opacity:1;transform:none}}
+
+/* Vídeo do YouTube: só a capa até tocar (o player é pesado e só carrega quando for assistir) */
+.yt{position:relative;display:block;width:100%;aspect-ratio:16/9;border:0;padding:0;border-radius:var(--radius);overflow:hidden;background:#000;cursor:pointer;box-shadow:var(--shadow)}
+.yt img{width:100%;height:100%;object-fit:cover;transition:transform .3s, opacity .3s}
+.yt:hover img{transform:scale(1.03);opacity:.9}
+.yt .play{position:absolute;inset:0;margin:auto;width:76px;height:76px;border-radius:50%;background:var(--orange);display:grid;place-items:center;box-shadow:0 6px 0 #C46D0A}
+.yt .play::after{content:"";border-left:24px solid #fff;border-top:15px solid transparent;border-bottom:15px solid transparent;margin-left:6px}
+.yt .rotulo{position:absolute;left:14px;bottom:14px;background:rgba(19,41,75,.85);color:#fff;font-weight:800;font-size:.85rem;padding:6px 12px;border-radius:99px}
+.yt iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.legenda-yt{margin-top:10px;font-size:.9rem;color:var(--muted);font-weight:700}
+.btn-jogar{background:var(--green);color:#fff;box-shadow:0 5px 0 #1F7536}
+.btn-jogar:active{transform:translateY(2px);box-shadow:0 2px 0 #1F7536}
+.jogo .jogar{align-self:flex-start;margin-top:8px;font-weight:800;font-size:.9rem;text-decoration:none;color:var(--green)}
+.jogo .jogar:hover{text-decoration:underline}
+.pilares{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:36px}
+.pilares div{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px}
+.pilares .ico{font-size:2rem}
+.pilares h3{font-size:1.08rem;margin:8px 0 4px}
+.pilares p{font-size:.93rem;color:var(--muted);margin:0}
+@media (max-width:900px){.pilares{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.pilares{grid-template-columns:1fr}}
+.numeros{display:flex;flex-wrap:wrap;gap:12px 28px;margin-top:26px}
+.numeros div{font-weight:700;color:var(--muted);font-size:.95rem}
+.numeros b{display:block;font-family:"Baloo 2";font-size:1.9rem;color:var(--navy);line-height:1}
+.extra{display:inline-block;font-weight:800;font-size:.8rem;color:var(--purple);background:#F0E9FB;padding:5px 12px;border-radius:99px;margin-bottom:12px}
+
+/* Ícones em figurinha: cor forte, contorno grosso e sombra deslocada, como os botões do app */
+.ico{width:58px;height:58px;border-radius:18px;display:grid;place-items:center;font-size:30px!important;color:#fff!important;background:var(--c,var(--blue))!important;border:3px solid var(--navy);box-shadow:0 4px 0 var(--navy);transform:rotate(-4deg)}
+.revelar:nth-child(even) .ico{transform:rotate(4deg)}
+.hab .ico{width:54px;height:54px}
+.ex i{color:var(--c,var(--blue));margin-right:4px;vertical-align:-2px}
+.chip{display:inline-flex;align-items:center;gap:5px;background:color-mix(in srgb,var(--c,#13294B) 11%,#fff);color:color-mix(in srgb,var(--c,#13294B) 75%,#13294B);border:1.5px solid color-mix(in srgb,var(--c,#13294B) 30%,#fff)}
+.chip i{font-size:1rem}
+.btn i,.jogo .jogar i{font-size:1.15em}
+.rotulo i,.extra i{margin-right:2px;vertical-align:-2px}
+/* cartões com borda e sombra firmes, no lugar da sombra difusa */
+.hab,.passo,.jogo,.relatorio,.pilares div,.publico div,.idade,.justa div{border:2px solid #D3E0F0!important;box-shadow:0 6px 0 #D3E0F0!important}
+.hab{border-top:6px solid var(--c)!important}
+.jogo{transition:transform .2s}.jogo:hover{transform:translateY(-4px)}
+.tag{background:none;padding:0;color:var(--orange);letter-spacing:.08em}
+.tag::before{content:"";display:inline-block;width:22px;height:4px;border-radius:2px;background:var(--orange);margin-right:8px;vertical-align:middle}
+.center .tag::after{content:"";display:inline-block;width:22px;height:4px;border-radius:2px;background:var(--orange);margin-left:8px;vertical-align:middle}
+
+.foto-aluno{margin:0;background:#fff;border:2px solid #D3E0F0;box-shadow:0 6px 0 #D3E0F0;border-radius:var(--radius);overflow:hidden}
+.foto-aluno img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.foto-aluno figcaption{padding:14px 16px;font-weight:700;font-size:.95rem;color:var(--ink);display:flex;gap:10px;align-items:flex-start}
+.foto-aluno figcaption i{color:var(--orange);font-size:1.3rem;flex:none}
+
+/* prints do celular */
+.print{flex:0 0 calc((100% - 60px)/4);scroll-snap-align:start;margin:0;display:flex;flex-direction:column;gap:14px}
+.moldura{background:var(--navy);border-radius:30px;padding:8px;box-shadow:0 6px 0 #0B1A31}
+.moldura img{border-radius:23px;width:100%;height:auto;aspect-ratio:480/860;object-fit:cover;object-position:top;background:#fff}
+.print figcaption{font-size:.9rem;color:var(--muted)}
+.print figcaption b{display:block;color:var(--navy);font-size:1.05rem;font-family:"Baloo 2";margin-bottom:2px}
+.ico-mini{float:left;width:34px;height:34px;border-radius:10px;background:var(--orange);color:#fff;display:grid;place-items:center;font-size:18px;margin:2px 10px 0 0;border:2px solid var(--navy)}
+@media (max-width:900px){.print{flex-basis:calc((100% - 40px)/3)}}
+@media (max-width:640px){.print{flex-basis:62%}}
+.duplas-tela{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:460px;margin:0 auto}
+.duplas-tela .moldura:first-child{transform:rotate(-3deg)}
+.duplas-tela .moldura:last-child{transform:rotate(3deg) translateY(28px)}
+
+/* identificação precoce */
+.cedo{background:linear-gradient(180deg,#FFF6EA,#FFFFFF)}
+.passos-cedo{list-style:none;padding:0;margin:22px 0 0;display:grid;gap:14px}
+.passos-cedo li{display:flex;gap:14px;align-items:flex-start;background:#fff;border:2px solid #F3DDBF;box-shadow:0 5px 0 #F3DDBF;border-radius:16px;padding:14px 16px}
+.passos-cedo .num{flex:none;width:36px;height:36px;border-radius:11px;background:var(--orange);color:#fff;font-family:"Baloo 2";font-weight:800;font-size:1.2rem;display:grid;place-items:center;border:2px solid var(--navy)}
+.passos-cedo b{display:block;color:var(--navy)}
+.passos-cedo div{color:var(--muted);font-size:.95rem}
+.nota-cedo{margin-top:18px;font-size:.9rem;color:var(--muted);display:flex;gap:8px;align-items:flex-start}
+.nota-cedo i{color:var(--blue);font-size:1.2rem;flex:none;margin-top:2px}
 </style>
 </head>
 <body>
 
 <header>
-  <nav class="wrap nav" aria-label="Principal">
-    <a class="brand" href="#inicio"><img src="assets/logo.webp" width="420" height="420" alt="">Pedagogia Gamificada</a>
-    <ul>
-      <li><a href="#jogos">Jogos</a></li>
-      <li><a href="#beneficios">Benefícios</a></li>
-      <li><a href="#relatorio">Relatório</a></li>
-      <li><a href="#investimento">Investimento</a></li>
-    </ul>
-    <a class="btn btn-wa btn-sm" href="https://wa.me/5581985503305?text=Ol%C3%A1%21%20Vi%20a%20p%C3%A1gina%20Pedagogia%20Gamificada%20e%20quero%20solicitar%20meu%20app%20/%20tirar%20d%C3%BAvidas." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.05 4.91A9.82 9.82 0 0 0 12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01Zm-7.01 15.24h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.23 8.23 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.25-8.23a8.2 8.2 0 0 1 8.23 8.24c0 4.54-3.7 8.23-8.23 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.17.24-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.24 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28Z"/></svg> Fale comigo</a>
-  </nav>
+  <div class="wrap topo">
+    <a class="marca" href="#inicio"><img src="assets/logo.webp" alt="Games Pedagógicos" width="40" height="48"></a>
+    <nav aria-label="Seções">
+      <ul>
+        <li><a href="#jogos">Jogos</a></li>
+        <li><a href="#habilidades">Habilidades</a></li>
+        <li><a href="#identificar-cedo">Identificar cedo</a></li>
+        <li><a href="#plataforma">Plataforma</a></li>
+        <li><a href="#sua-escola">Sua escola</a></li>
+        <li><a href="#videos">Vídeos</a></li>
+        <li><a href="#duvidas">Dúvidas</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-main js-zap" href="#">Testar grátis</a>
+  </div>
 </header>
 
 <main id="inicio">
-  <section class="hero">
-    <div class="wrap hero-grid">
-      <div>
-        <span class="tag">Jogos educacionais web com a marca da escola</span>
-        <h1>Sua escola no jogo, <span>sua turma engajada.</span></h1>
-        <p class="lead">Jogos na web com a logo da escola e a imagem do professor. O aluno reconhece quem ensina, se envolve de verdade e disputa estrelas com os colegas numa competição saudável, que valoriza o esforço de cada um.</p>
-        <ul class="hero-points">
-          <li><span aria-hidden="true">🏫</span><p><b>Marca e professor na tela.</b> A logo da escola e a foto do professor dão confiança e fazem o aluno sentir que o jogo é dele.</p></li>
-          <li><span aria-hidden="true">🔥</span><p><b>Mais engajamento.</b> Missões curtas, estrelas e níveis fazem o aluno querer voltar e praticar também em casa.</p></li>
-          <li><span aria-hidden="true">🏆</span><p><b>Competição saudável.</b> Pontos e conquistas animam a turma, e cada aluno também disputa com o próprio recorde, sem expor quem está com dificuldade.</p></li>
-          <li><span aria-hidden="true">📊</span><p><b>Relatório para o professor.</b> Ao final de cada partida, ele vê onde cada aluno precisa de ajuda.</p></li>
-        </ul>
-        <div class="hero-cta">
-          <a class="btn btn-wa" href="https://wa.me/5581985503305?text=Ol%C3%A1%21%20Vi%20a%20p%C3%A1gina%20Pedagogia%20Gamificada%20e%20quero%20solicitar%20meu%20app%20/%20tirar%20d%C3%BAvidas." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.05 4.91A9.82 9.82 0 0 0 12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01Zm-7.01 15.24h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.23 8.23 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.25-8.23a8.2 8.2 0 0 1 8.23 8.24c0 4.54-3.7 8.23-8.23 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.17.24-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.24 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28Z"/></svg> Solicite seu app</a>
-          <a class="btn btn-ghost" href="#jogos">Ver jogos de exemplo</a>
-        </div>
-        <div class="xp" aria-label="Exemplo de progresso de um aluno">
-          <div class="xp-top"><span>Progresso da turma</span><b id="xpTxt">0%</b></div>
-          <div class="xp-bar"><div class="xp-fill" id="xpFill"></div></div>
-          <div class="xp-steps"><span>⭐ Jogou</span><span>📊 Gerou relatório</span><span>🎯 Professor planejou</span></div>
-        </div>
+
+<!-- HERO: a plataforma de jogos -->
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <span class="tag">Jogos psicopedagógicos · 4 a 14 anos</span>
+      <h1>Jogos que treinam o <em>jeito de pensar</em> da criança</h1>
+      <p class="lead">Mais de 30 jogos para desenvolver atenção, memória, raciocínio, controle da impulsividade e visão espacial, junto com Português e Matemática. O aluno joga e a escola identifica logo no início as dificuldades de cada um. Tudo vai com a identidade visual da sua escola.</p>
+      <div class="btns">
+        <a class="btn btn-jogar js-app" href="#"><i class="ph-fill ph-play" aria-hidden="true"></i> Jogar agora</a>
+        <a class="btn btn-main js-zap" href="#">Clique para testar grátis</a>
       </div>
-      <div class="logo-stage">
-        <div class="ring" aria-hidden="true"></div>
-        <img src="assets/logo.webp" width="420" height="420" alt="Logo Pedagogia Gamificada: livro aberto com um controle de videogame e uma estrela">
+      <div class="numeros">
+        <div><b>+30</b>jogos</div>
+        <div><b>20+</b>habilidades</div>
+        <div><b>4–14</b>anos</div>
+        <div><b>0</b>instalação</div>
       </div>
     </div>
-  </section>
+    <div>
+      <button class="yt" type="button" data-video="Ch8QlP4UpyI" aria-label="Assistir o vídeo de apresentação dos jogos">
+        <img src="https://i.ytimg.com/vi/Ch8QlP4UpyI/hqdefault.jpg" alt="" width="480" height="360">
+        <span class="play" aria-hidden="true"></span>
+        <span class="rotulo"><i class="ph-fill ph-game-controller" aria-hidden="true"></i> Conheça os jogos</span>
+      </button>
+      <p class="legenda-yt">Apresentação dos jogos psicopedagógicos</p>
+    </div>
+  </div>
+</section>
 
-  <section id="jogos">
-    <div class="wrap">
-      <h2 class="rv">Jogos em funcionamento</h2>
-      <p class="lead rv">Cinco aplicativos reais: dominó de palavras para professora de inglês, jogo de tabuleiro para neuropsicopedagoga, inglês para escola de idiomas, alfabetização para psicopedagoga e ortografia para escola. Deslize para ver todos e toque para jogar.</p>
-      <div class="carrossel rv" role="region" aria-roledescription="carrossel" aria-label="Jogos em funcionamento">
-      <div class="trilho" id="trilho" tabindex="0">
-        <article class="game mallu" aria-roledescription="slide" aria-label="1 de 5">
-          <span class="emoji" aria-hidden="true">🁫</span>
-          <span class="kicker">Novo · App para professora de inglês</span>
-          <h3>Let’s play with Mallu</h3>
-          <p>Dominó de palavras inglês–português com 200 palavras que mais confundem os brasileiros. O aluno joga com 3 colegas virtuais, liga cada palavra à sua tradução e, quando erra, a Mallu explica com um exemplo. Modos Aprender, Desafio com medalhas e Professor, com relatório em PDF.</p>
-          <a class="btn" href="https://marcoaurello.github.io/inglesdamallu/" target="_blank" rel="noopener">▶ Jogar com a Mallu</a>
-          <a class="tela" href="https://marcoaurello.github.io/inglesdamallu/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="assets/telas/domino.webp" width="420" height="747" alt="Tela do dominó da Mallu: peças com palavras em inglês e português na mesa verde, com as pontas em destaque" loading="lazy"></a>
-        </article>
-        <article class="game desafio" aria-roledescription="slide" aria-label="2 de 5">
-          <span class="emoji" aria-hidden="true">♟️</span>
-          <span class="kicker">App para neuropsicopedagoga</span>
-          <h3>Desafio das Peças com a Nágila</h3>
-          <p>Jogo de tabuleiro contra a Nágila ou entre duas pessoas: levar as 4 peças para o outro lado sem pular nem comer. Dois cronômetros e relatório em PDF de atenção, planejamento, controle inibitório e soluções diversas.</p>
-          <a class="btn" href="https://marcoaurello.github.io/jogoTabuleiro/" target="_blank" rel="noopener">▶ Jogar Desafio das Peças</a>
-          <a class="tela" href="https://marcoaurello.github.io/jogoTabuleiro/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="assets/telas/desafio.webp" width="420" height="747" alt="Tela do Desafio das Peças: tabuleiro azul com peças vermelhas e azuis numeradas e a Nágila ao lado" loading="lazy"></a>
-        </article>
-        <article class="game myday" aria-roledescription="slide" aria-label="3 de 5">
-          <span class="emoji" aria-hidden="true">⏰</span>
-          <span class="kicker">App de inglês para escola de idiomas</span>
-          <h3>My Day — English Academy</h3>
-          <p>O aluno acompanha o dia de um personagem das 9h às 18h, consulta a agenda e escolhe a frase certa em inglês ou em português. Tem níveis fácil e difícil, cronômetro, pontuação e relatório em PDF com a correção hora a hora.</p>
-          <a class="btn" href="https://routinesgame.vercel.app/" target="_blank" rel="noopener">▶ Jogar My Day</a>
-          <a class="tela" href="https://routinesgame.vercel.app/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="assets/telas/myday.webp" width="420" height="747" alt="Tela do My Day: relógio digital às 9h, agenda e frase certa em inglês marcada em verde" loading="lazy"></a>
-        </article>
-        <article class="game ana" aria-roledescription="slide" aria-label="4 de 5">
-          <span class="emoji" aria-hidden="true">🔤</span>
-          <span class="kicker">App para psicopedagoga</span>
-          <h3>ABC da Tia ANA</h3>
-          <p>A criança monta palavras arrastando letras, com a foto da Tia Ana, e gera um relatório com o tempo por peça e as dificuldades.</p>
-          <a class="btn" href="https://abcdaana.vercel.app/" target="_blank" rel="noopener">▶ Jogar ABC da Tia ANA</a>
-          <a class="tela" href="https://abcdaana.vercel.app/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="assets/telas/abc.webp" width="420" height="747" alt="Tela do ABC da Tia ANA: foto de um bolo, a palavra BOLO para montar e letras coloridas" loading="lazy"></a>
-        </article>
-        <article class="game pleno" aria-roledescription="slide" aria-label="5 de 5">
-          <span class="emoji" aria-hidden="true">🏆</span>
-          <span class="kicker">App estilo Duolingo para escola</span>
-          <h3>Jogo de Ortografia do Pleno</h3>
-          <p>Tem a logo do colégio, o mascote Plenix, missões com as palavras que a turma mais erra e relatório em PDF.</p>
-          <a class="btn" href="https://marcoaurello.github.io/jogoOrtografia/" target="_blank" rel="noopener">▶ Jogar Ortografia do Pleno</a>
-          <a class="tela" href="https://marcoaurello.github.io/jogoOrtografia/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="assets/telas/ortografia.webp" width="420" height="747" alt="Tela do Jogo de Ortografia: mascote Plenix, figura de um vaso e a escolha entre S e SS" loading="lazy"></a>
-        </article>
+<!-- POR QUE JOGOS PSICOPEDAGÓGICOS -->
+<section>
+  <div class="wrap">
+    <div class="center revelar">
+      <span class="tag">Por que jogos psicopedagógicos</span>
+      <h2>Brincando, a criança treina o que sustenta toda a aprendizagem</h2>
+      <p class="lead">Ler, calcular e interpretar dependem de habilidades como atenção, memória e controle dos impulsos, que podem ser treinadas. Os jogos transformam esse treino em desafio curto, divertido e com níveis.</p>
+    </div>
+    <div class="pilares">
+      <div class="revelar"><div class="ico" style="--c:#1E88E5"><i class="ph-fill ph-game-controller" aria-hidden="true"></i></div><h3>Treino que parece brincadeira</h3><p>Partidas curtas, com estrelas e níveis, que respeitam o tempo de atenção da criança.</p></div>
+      <div class="revelar"><div class="ico" style="--c:#2E9D4A"><i class="ph-fill ph-trend-up" aria-hidden="true"></i></div><h3>Do fácil ao difícil</h3><p>Cada jogo tem níveis. A criança começa onde está e avança no próprio ritmo.</p></div>
+      <div class="revelar"><div class="ico" style="--c:#F28C18"><i class="ph-fill ph-arrow-counter-clockwise" aria-hidden="true"></i></div><h3>Erro sem castigo</h3><p>O erro vira pista para tentar de novo. É assim que a criança aprende a persistir.</p></div>
+      <div class="revelar"><div class="ico" style="--c:#7B4FC9"><i class="ph-fill ph-binoculars" aria-hidden="true"></i></div><h3>Dificuldades identificadas cedo</h3><p>Já nas primeiras partidas, a escola vê onde cada aluno trava, quando ainda dá tempo de ajudar.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- HABILIDADES -->
+<section id="habilidades" class="alt">
+  <div class="wrap">
+    <div class="center revelar">
+      <span class="tag">Benefícios para a criança</span>
+      <h2>As habilidades que cada jogo desenvolve</h2>
+      <p class="lead">Os jogos foram pensados a partir das funções executivas e cognitivas, as habilidades que ajudam a criança a se concentrar, planejar, controlar a impulsividade e resolver problemas.</p>
+    </div>
+    <div class="habs">
+      <div class="hab revelar" style="--c:#E5484D">
+        <div class="ico"><i class="ph-fill ph-hand-palm" aria-hidden="true"></i></div><h3>Controle da impulsividade</h3><div class="crianca">“Pensar antes de agir”</div>
+        <p>Segurar a primeira resposta automática e escolher a certa. Isso ajuda nas provas, nas conversas e na convivência.</p>
+        <div class="ex"><i class="ph-fill ph-game-controller" aria-hidden="true"></i> Polícia com setas trocadas · Palitos coloridos · Sequência de luzes</div>
       </div>
-      <div class="carrossel-ctrl">
-        <button class="seta" id="ant" type="button" aria-label="Jogo anterior">‹</button>
+      <div class="hab revelar" style="--c:#2B4A9A">
+        <div class="ico"><i class="ph-fill ph-puzzle-piece" aria-hidden="true"></i></div><h3>Raciocínio lógico</h3><div class="crianca">“Raciocinar”</div>
+        <p>Achar regras, relacionar pistas e chegar a conclusões, a base para a Matemática e para a interpretação de texto.</p>
+        <div class="ex"><i class="ph-fill ph-game-controller" aria-hidden="true"></i> Programação com o robô · Fila com pistas · Regra secreta</div>
+      </div>
+      <div class="hab revelar" style="--c:#2E7D32">
+        <div class="ico"><i class="ph-fill ph-cube" aria-hidden="true"></i></div><h3>Visão espacial</h3><div class="crianca">“Posição e espaço”</div>
+        <p>Imaginar objetos girando, de lado e de cima. É uma habilidade importante para Geometria, leitura de mapas e escrita.</p>
+        <div class="ex"><i class="ph-fill ph-game-controller" aria-hidden="true"></i> De lado e de cima · Figura que gira · Conte os blocos</div>
+      </div>
+      <div class="hab revelar" style="--c:#7B4FC9">
+        <div class="ico"><i class="ph-fill ph-brain" aria-hidden="true"></i></div><h3>Memória de trabalho</h3><div class="crianca">“Lembrar”</div>
+        <p>Guardar e usar a informação enquanto faz a tarefa, por exemplo seguir instruções de vários passos e fazer contas de cabeça.</p>
+        <div class="ex"><i class="ph-fill ph-game-controller" aria-hidden="true"></i> Memória dos dinossauros · Siga o táxi · Caminho da memória</div>
+      </div>
+      <div class="hab revelar" style="--c:#E5731F">
+        <div class="ico"><i class="ph-fill ph-target" aria-hidden="true"></i></div><h3>Atenção e concentração</h3><div class="crianca">“Ficar concentrado”</div>
+        <p>Manter o foco até o fim e encontrar o que importa no meio do que distrai.</p>
+        <div class="ex"><i class="ph-fill ph-game-controller" aria-hidden="true"></i> Palavra escondida · Atenção à forma · Flores e dados</div>
+      </div>
+      <div class="hab revelar" style="--c:#6A1B9A">
+        <div class="ico"><i class="ph-fill ph-shuffle" aria-hidden="true"></i></div><h3>Flexibilidade cognitiva</h3><div class="crianca">“Mudar o jeito”</div>
+        <p>Trocar de estratégia quando a regra muda, sem travar e sem continuar no jeito antigo.</p>
+        <div class="ex"><i class="ph-fill ph-game-controller" aria-hidden="true"></i> Setas e cores · Cores da borda · Polícia</div>
+      </div>
+      <div class="hab revelar" style="--c:#1E88E5">
+        <div class="ico"><i class="ph-fill ph-map-trifold" aria-hidden="true"></i></div><h3>Planejamento</h3><div class="crianca">“Planejar”</div>
+        <p>Pensar nos próximos passos antes de começar e organizar a tarefa do início ao fim.</p>
+        <div class="ex"><i class="ph-fill ph-game-controller" aria-hidden="true"></i> Pilhas de cores · Desafios de estratégia · Rotina em ordem</div>
+      </div>
+      <div class="hab revelar" style="--c:#D84315">
+        <div class="ico"><i class="ph-fill ph-flag-checkered" aria-hidden="true"></i></div><h3>Tolerância à frustração</h3><div class="crianca">“Não desistir”</div>
+        <p>O erro aparece sem castigo, e o aluno pode tentar de novo. Assim ele aprende a persistir.</p>
+        <div class="ex"><i class="ph-fill ph-game-controller" aria-hidden="true"></i> Pilhas de cores · Desafios de estratégia</div>
+      </div>
+    </div>
+    <p class="center revelar" style="margin-top:28px;color:var(--muted)">E também lateralidade, percepção visual, velocidade de processamento, coordenação motora fina, consciência fonológica e linguagem.</p>
+  </div>
+</section>
+
+<!-- CARROSSEL DE JOGOS -->
+<section id="jogos">
+  <div class="wrap">
+    <div class="center revelar">
+      <span class="tag">Mais de 30 jogos</span>
+      <h2>Conheça alguns jogos e o que cada um desenvolve</h2>
+      <p class="lead">Jogos psicopedagógicos de raciocínio e jogos de Português, Matemática, Geografia, História e Inglês. Deslize para ver e toque em jogar.</p>
+    </div>
+    <div class="carrossel">
+      <div class="faixa-jogos" id="faixa-jogos" tabindex="0" aria-label="Jogos">
+        <article class="jogo"><img src="assets/jogos/policia.jpg" alt="Tela do jogo Polícia: viatura num mapa de ruas" loading="lazy">
+          <div class="corpo"><h3>Polícia</h3><p>Dirija a viatura com as setas fora do lugar, que mudam de ordem, e prenda o ladrão.</p>
+          <div class="chips"><span class="chip" style="--c:#E5484D"><i class="ph-fill ph-hand-palm" aria-hidden="true"></i>Impulsividade</span><span class="chip" style="--c:#6A1B9A"><i class="ph-fill ph-shuffle" aria-hidden="true"></i>Flexibilidade</span><span class="chip" style="--c:#2E7D32"><i class="ph-fill ph-cube" aria-hidden="true"></i>Espaço</span></div><a class="jogar js-app" href="#"><i class="ph-fill ph-play" aria-hidden="true"></i> Jogar</a></div></article>
+        <article class="jogo"><img src="assets/jogos/giro.jpg" alt="Tela do jogo Figura que gira" loading="lazy">
+          <div class="corpo"><h3>Figura que gira</h3><p>Imagine a figura girando no sentido do relógio ou ao contrário e descubra como ela ficou.</p>
+          <div class="chips"><span class="chip" style="--c:#2E7D32"><i class="ph-fill ph-cube" aria-hidden="true"></i>Visão espacial</span><span class="chip" style="--c:#00838F"><i class="ph-fill ph-eye" aria-hidden="true"></i>Percepção</span><span class="chip" style="--c:#0277BD"><i class="ph-fill ph-arrows-left-right" aria-hidden="true"></i>Lateralidade</span></div><a class="jogar js-app" href="#"><i class="ph-fill ph-play" aria-hidden="true"></i> Jogar</a></div></article>
+        <article class="jogo"><img src="assets/jogos/caminho.jpg" alt="Tela do jogo Caminho da memória" loading="lazy">
+          <div class="corpo"><h3>Caminho da memória</h3><p>Memorize a sequência de formas e leve o carro pelo mapa até a casa.</p>
+          <div class="chips"><span class="chip" style="--c:#7B4FC9"><i class="ph-fill ph-brain" aria-hidden="true"></i>Memória</span><span class="chip" style="--c:#1E88E5"><i class="ph-fill ph-map-trifold" aria-hidden="true"></i>Planejamento</span><span class="chip" style="--c:#2E7D32"><i class="ph-fill ph-cube" aria-hidden="true"></i>Espaço</span></div><a class="jogar js-app" href="#"><i class="ph-fill ph-play" aria-hidden="true"></i> Jogar</a></div></article>
+        <article class="jogo"><img src="assets/jogos/chaves.jpg" alt="Tela do jogo Chaves de sobreposição" loading="lazy">
+          <div class="corpo"><h3>Chaves de sobreposição</h3><p>Imagine as figuras transparentes uma sobre a outra e complete a chave.</p>
+          <div class="chips"><span class="chip" style="--c:#00838F"><i class="ph-fill ph-eye" aria-hidden="true"></i>Percepção</span><span class="chip" style="--c:#2B4A9A"><i class="ph-fill ph-puzzle-piece" aria-hidden="true"></i>Raciocínio</span><span class="chip" style="--c:#2E7D32"><i class="ph-fill ph-cube" aria-hidden="true"></i>Espaço</span></div><a class="jogar js-app" href="#"><i class="ph-fill ph-play" aria-hidden="true"></i> Jogar</a></div></article>
+        <article class="jogo"><img src="assets/jogos/psico-estrategia.jpg" alt="Tela dos desafios de estratégia" loading="lazy">
+          <div class="corpo"><h3>Desafios de estratégia</h3><p>Desafios de raciocínio em que é preciso pensar antes de mover cada peça.</p>
+          <div class="chips"><span class="chip" style="--c:#2B4A9A"><i class="ph-fill ph-puzzle-piece" aria-hidden="true"></i>Raciocínio</span><span class="chip" style="--c:#1E88E5"><i class="ph-fill ph-map-trifold" aria-hidden="true"></i>Planejamento</span><span class="chip" style="--c:#D84315"><i class="ph-fill ph-flag-checkered" aria-hidden="true"></i>Não desistir</span></div><a class="jogar js-app" href="#"><i class="ph-fill ph-play" aria-hidden="true"></i> Jogar</a></div></article>
+        <article class="jogo"><img src="assets/jogos/taxi.jpg" alt="Tela do jogo Siga o táxi" loading="lazy">
+          <div class="corpo"><h3>Siga o táxi</h3><p>Veja o trajeto do táxi pelas ruas e refaça o mesmo caminho.</p>
+          <div class="chips"><span class="chip" style="--c:#7B4FC9"><i class="ph-fill ph-brain" aria-hidden="true"></i>Memória</span><span class="chip" style="--c:#E5731F"><i class="ph-fill ph-target" aria-hidden="true"></i>Concentração</span><span class="chip" style="--c:#2E7D32"><i class="ph-fill ph-cube" aria-hidden="true"></i>Espaço</span></div><a class="jogar js-app" href="#"><i class="ph-fill ph-play" aria-hidden="true"></i> Jogar</a></div></article>
+        <article class="jogo"><img src="assets/jogos/pixels.jpg" alt="Tela do jogo Desenho em pixels" loading="lazy">
+          <div class="corpo"><h3>Desenho em pixels</h3><p>Arraste as peças e monte o desenho, comparando as linhas e as colunas numeradas.</p>
+          <div class="chips"><span class="chip" style="--c:#2E7D32"><i class="ph-fill ph-cube" aria-hidden="true"></i>Visão espacial</span><span class="chip" style="--c:#558B2F"><i class="ph-fill ph-hand-pointing" aria-hidden="true"></i>Coordenação</span><span class="chip" style="--c:#1E88E5"><i class="ph-fill ph-map-trifold" aria-hidden="true"></i>Planejamento</span></div><a class="jogar js-app" href="#"><i class="ph-fill ph-play" aria-hidden="true"></i> Jogar</a></div></article>
+        <article class="jogo"><img src="assets/jogos/copia.jpg" alt="Tela do jogo Copie a grade" loading="lazy">
+          <div class="corpo"><h3>Copie a grade</h3><p>Monte a grade igualzinha ao modelo: a forma, a direção e a cor de cada peça.</p>
+          <div class="chips"><span class="chip" style="--c:#00838F"><i class="ph-fill ph-eye" aria-hidden="true"></i>Percepção</span><span class="chip" style="--c:#2E7D32"><i class="ph-fill ph-cube" aria-hidden="true"></i>Espaço</span><span class="chip" style="--c:#C2185B"><i class="ph-fill ph-magnifying-glass" aria-hidden="true"></i>Atenção</span></div><a class="jogar js-app" href="#"><i class="ph-fill ph-play" aria-hidden="true"></i> Jogar</a></div></article>
+        <article class="jogo"><img src="assets/jogos/escondida.jpg" alt="Tela do jogo Palavra escondida" loading="lazy">
+          <div class="corpo"><h3>Palavra escondida</h3><p>As linhas de letras não param de chegar: ache a palavra em cada uma, sem cair nas iscas.</p>
+          <div class="chips"><span class="chip" style="--c:#C2185B"><i class="ph-fill ph-magnifying-glass" aria-hidden="true"></i>Atenção seletiva</span><span class="chip" style="--c:#E5731F"><i class="ph-fill ph-target" aria-hidden="true"></i>Concentração</span><span class="chip" style="--c:#C99700"><i class="ph-fill ph-lightning" aria-hidden="true"></i>Rapidez</span></div><a class="jogar js-app" href="#"><i class="ph-fill ph-play" aria-hidden="true"></i> Jogar</a></div></article>
+        <article class="jogo"><img src="assets/jogos/somando.jpg" alt="Tela do jogo Somando as cores" loading="lazy">
+          <div class="corpo"><h3>Somando as cores</h3><p>Some e subtraia figuras coloridas de cabeça e escolha o resultado certo.</p>
+          <div class="chips"><span class="chip" style="--c:#E53935"><i class="ph-fill ph-math-operations" aria-hidden="true"></i>Números</span><span class="chip" style="--c:#7B4FC9"><i class="ph-fill ph-brain" aria-hidden="true"></i>Memória</span><span class="chip" style="--c:#00838F"><i class="ph-fill ph-eye" aria-hidden="true"></i>Percepção</span></div><a class="jogar js-app" href="#"><i class="ph-fill ph-play" aria-hidden="true"></i> Jogar</a></div></article>
+        <article class="jogo"><img src="assets/jogos/chuva-matematica.jpg" alt="Tela do jogo Chuva de Matemática" loading="lazy">
+          <div class="corpo"><h3>Chuva de Matemática</h3><p>As contas caem: responda antes que cheguem ao chão. A dificuldade se ajusta ao aluno.</p>
+          <div class="chips"><span class="chip" style="--c:#E53935"><i class="ph-fill ph-math-operations" aria-hidden="true"></i>Números</span><span class="chip" style="--c:#C99700"><i class="ph-fill ph-lightning" aria-hidden="true"></i>Rapidez</span><span class="chip" style="--c:#E5731F"><i class="ph-fill ph-target" aria-hidden="true"></i>Concentração</span></div><a class="jogar js-app" href="#"><i class="ph-fill ph-play" aria-hidden="true"></i> Jogar</a></div></article>
+        <article class="jogo"><img src="assets/jogos/chuva-erros.jpg" alt="Tela do jogo Chuva de Erros" loading="lazy">
+          <div class="corpo"><h3>Chuva de Erros</h3><p>Pegue só as palavras escritas do jeito certo antes que elas sumam.</p>
+          <div class="chips"><span class="chip" style="--c:#1565C0"><i class="ph-fill ph-pencil-simple-line" aria-hidden="true"></i>Ortografia</span><span class="chip" style="--c:#E5484D"><i class="ph-fill ph-hand-palm" aria-hidden="true"></i>Impulsividade</span><span class="chip" style="--c:#C2185B"><i class="ph-fill ph-magnifying-glass" aria-hidden="true"></i>Atenção</span></div><a class="jogar js-app" href="#"><i class="ph-fill ph-play" aria-hidden="true"></i> Jogar</a></div></article>
+        <article class="jogo"><img src="assets/jogos/peso-certo.jpg" alt="Tela do jogo Peso certo" loading="lazy">
+          <div class="corpo"><h3>Peso certo</h3><p>Equilibre a balança com pesos em kg, g e mg, convertendo as unidades.</p>
+          <div class="chips"><span class="chip" style="--c:#E53935"><i class="ph-fill ph-math-operations" aria-hidden="true"></i>Números</span><span class="chip" style="--c:#2B4A9A"><i class="ph-fill ph-puzzle-piece" aria-hidden="true"></i>Raciocínio</span><span class="chip" style="--c:#1E88E5"><i class="ph-fill ph-map-trifold" aria-hidden="true"></i>Planejamento</span></div><a class="jogar js-app" href="#"><i class="ph-fill ph-play" aria-hidden="true"></i> Jogar</a></div></article>
+        <article class="jogo"><img src="assets/jogos/abc-tia-ana.jpg" alt="Tela do jogo ABC" loading="lazy">
+          <div class="corpo"><h3>ABC</h3><p>Alfabetização: monte palavras com letras e sílabas, ligando a figura à escrita.</p>
+          <div class="chips"><span class="chip" style="--c:#283593"><i class="ph-fill ph-speaker-high" aria-hidden="true"></i>Sons das letras</span><span class="chip" style="--c:#1565C0"><i class="ph-fill ph-chat-circle-text" aria-hidden="true"></i>Palavras</span><span class="chip" style="--c:#558B2F"><i class="ph-fill ph-hand-pointing" aria-hidden="true"></i>Coordenação</span></div><a class="jogar js-app" href="#"><i class="ph-fill ph-play" aria-hidden="true"></i> Jogar</a></div></article>
+        <article class="jogo"><img src="assets/jogos/ortografia.jpg" alt="Tela do Jogo de Ortografia" loading="lazy">
+          <div class="corpo"><h3>Jogo de Ortografia</h3><p>Missões com as dúvidas da escrita (S ou SS, Ç, R ou RR, acentos), com a regra explicada e a palavra falada.</p>
+          <div class="chips"><span class="chip" style="--c:#1565C0"><i class="ph-fill ph-pencil-simple-line" aria-hidden="true"></i>Ortografia</span><span class="chip" style="--c:#283593"><i class="ph-fill ph-speaker-high" aria-hidden="true"></i>Sons das letras</span><span class="chip" style="--c:#C2185B"><i class="ph-fill ph-magnifying-glass" aria-hidden="true"></i>Atenção</span></div><a class="jogar js-app" href="#"><i class="ph-fill ph-play" aria-hidden="true"></i> Jogar</a></div></article>
+      </div>
+      <div class="setas">
+        <button class="seta" id="ant" aria-label="Jogos anteriores">‹</button>
         <div class="pontos" id="pontos"></div>
-        <button class="seta" id="prox" type="button" aria-label="Próximo jogo">›</button>
-      </div>
-      </div>
-    </div>
-  </section>
-
-  <section style="padding-top:0">
-    <div class="wrap">
-      <div class="quote rv">
-        <span class="px g" style="right:2rem;top:1.6rem"></span><span class="px" style="right:3.2rem;top:2.8rem"></span><span class="px" style="right:1.4rem;top:3.6rem"></span>
-        <p>O aluno abre um aplicativo que é dele, e encontra o professor ali, mesmo estando em casa.</p>
-        <small>Ele vê a logo da escola, a imagem do professor e ouve a voz dele. Joga atividades curtas e, no final, o professor recebe um relatório com o tempo de resposta e as principais dificuldades.</small>
+        <button class="seta" id="prox" aria-label="Próximos jogos">›</button>
       </div>
     </div>
-  </section>
+    <div class="btns" style="justify-content:center">
+      <a class="btn btn-jogar js-app" href="#"><i class="ph-fill ph-play" aria-hidden="true"></i> Ver todos os jogos</a>
+    </div>
+  </div>
+</section>
 
-  <section id="beneficios">
-    <div class="wrap">
-      <h2 class="rv">Por que ter um aplicativo próprio</h2>
-      <p class="lead rv">Na sala de aula, na terapia ou em casa, o aplicativo aproxima o aluno e entrega ao professor informação para ensinar melhor.</p>
-      <div class="benefits">
-        <article class="benefit big rv"><div class="ico">🏡</div><h3>Vínculo, mesmo em casa</h3><p>A logo da escola, a imagem e a voz do professor acompanham o aluno quando ele está em casa, mantendo a aproximação fora da sala de aula. Um ambiente conhecido e previsível acolhe especialmente crianças com TEA e síndrome de Down.</p></article>
-        <article class="benefit rv"><div class="ico">🎮</div><h3>Engajamento</h3><p>Estrelas, missões e partidas curtas tornam a prática prazerosa e respeitam o tempo de atenção de alunos com TDAH.</p></article>
-        <article class="benefit rv"><div class="ico">🤝</div><h3>Inclusão</h3><p>Áudio, figuras grandes e erro sem punição respeitam o ritmo de cada criança.</p></article>
-        <article class="benefit rv"><div class="ico">📋</div><h3>Relatórios automáticos</h3><p>Tempo de resposta por letra ou sílaba, acertos, erros e principais dificuldades, sem trabalho extra de correção.</p></article>
-        <article class="benefit rv"><div class="ico">🎯</div><h3>Dados para decidir</h3><p>O professor vê onde a turma e cada aluno têm mais dificuldade e planeja o reforço ou a terapia com precisão.</p></article>
-        <article class="benefit rv" style="grid-column:1/-1"><div class="ico">👨‍👩‍👧</div><h3>Família próxima</h3><p>O relatório pode ser baixado em PDF ou enviado ao professor pelo celular, e a família acompanha a evolução da criança.</p></article>
+<!-- IDADES -->
+<section class="alt">
+  <div class="wrap">
+    <div class="center revelar">
+      <span class="tag">De 4 a 14 anos</span>
+      <h2>Acompanha a criança da Educação Infantil ao 9º ano</h2>
+      <p class="lead">Na tela de jogos, o aluno escolhe a habilidade que quer treinar, como “Pensar antes de agir”, “Lembrar” ou “Posição e espaço”, e encontra os jogos certos para ela.</p>
+    </div>
+    <div class="idades">
+      <div class="idade revelar" style="--c:var(--green)">
+        <div class="faixa">4 a 6 anos</div><h3>Primeiros passos</h3>
+        <ul><li>Letras, sílabas e primeiras palavras</li><li>Direita e esquerda, cima e baixo</li><li>Memória visual e atenção</li><li>Cores, formas e quantidades</li></ul>
+      </div>
+      <div class="idade revelar" style="--c:var(--blue)">
+        <div class="faixa">7 a 10 anos</div><h3>Base sólida</h3>
+        <ul><li>Ortografia: S ou SS, Ç, R ou RR e acentos</li><li>Tabuada e cálculo mental</li><li>Horas, frações e medidas</li><li>Pensar antes de agir e mudar de estratégia</li></ul>
+      </div>
+      <div class="idade revelar" style="--c:var(--purple)">
+        <div class="faixa">11 a 14 anos</div><h3>Pensamento avançado</h3>
+        <ul><li>Classes de palavras</li><li>Gráficos, conjuntos e ângulos</li><li>Programação com blocos e leitura de mapas</li><li>Estratégia e visão espacial</li></ul>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section id="relatorio" class="report">
-    <div class="wrap report-grid">
-      <figure class="report-img rv" style="margin:0"><img src="assets/relatorio-exemplo.jpg" width="900" height="1063" alt="Relatório real do jogo ABC da Tia ANA, com média de 4,8 segundos por peça e gráfico de tempo por palavra" loading="lazy"></figure>
-      <div class="rv">
-        <h2>Um relatório real, em 2 minutos de jogo</h2>
-        <p class="lead">Este é o relatório que o ABC da Tia ANA gerou ao final de uma partida. Veja o que o professor descobre sem precisar corrigir nada.</p>
-        <div class="stats">
-          <div class="stat"><b data-n="4.8" data-d="1">4,8</b><span>segundos por peça (ótimo)</span></div>
-          <div class="stat"><b data-n="88" data-s="%">88%</b><span>certas na 1ª tentativa</span></div>
-          <div class="stat"><b data-n="10">10</b><span>palavras montadas</span></div>
-          <div class="stat"><b data-n="3">3</b><span>erros na partida</span></div>
-        </div>
-        <ul class="finds">
-          <li>Trocou U por O e O por A</li>
-          <li>Levou 16,5 s para achar a letra E</li>
-          <li>Resultado regular em CORUJA, CEBOLA e MENINA</li>
-        </ul>
-        <div class="focus">🎯 Foco da próxima aula: vogais O, U e E e palavras de três sílabas.</div>
-      </div>
-    </div>
-  </section>
-
-
-  <section id="investimento" style="padding-top:0">
-    <div class="wrap">
-      <h2 class="rv">Investimento</h2>
-      <p class="lead rv">De R$ 200 a R$ 800, conforme a dinâmica do jogo, a quantidade de conteúdos, a arquitetura do aplicativo e os relatórios.</p>
-      <div class="plans">
-        <div class="plan rv"><h3>Essencial</h3><div class="price">R$ 200</div>
-          <ul><li>Um tipo de jogo</li><li>Foto do professor ou logo da escola</li><li>Banco de palavras</li><li>Relatório simples de acertos e erros</li></ul>
-          <a class="btn btn-ghost" href="https://wa.me/5581985503305?text=Ol%C3%A1%21%20Vi%20a%20p%C3%A1gina%20Pedagogia%20Gamificada%20e%20tenho%20interesse%20no%20plano%20Essencial." target="_blank" rel="noopener">Quero o Essencial</a></div>
-        <div class="plan hl rv"><h3>Personalizado</h3><div class="price">R$ 400 <small>a</small> R$ 600</div>
-          <ul><li>Mais de uma dinâmica ou missões</li><li>Áudio das palavras</li><li>Relatório com tempo de resposta e dificuldades</li><li>Relatório em PDF</li></ul>
-          <a class="btn btn-wa" href="https://wa.me/5581985503305?text=Ol%C3%A1%21%20Vi%20a%20p%C3%A1gina%20Pedagogia%20Gamificada%20e%20tenho%20interesse%20no%20plano%20Personalizado." target="_blank" rel="noopener">Quero o Personalizado</a></div>
-        <div class="plan rv"><h3>Completo</h3><div class="price"><small>até</small> R$ 800</div>
-          <ul><li>Várias fases</li><li>Mascote próprio</li><li>Relatório detalhado com evolução</li><li>Envio ao professor e instalação no celular</li></ul>
-          <a class="btn btn-ghost" href="https://wa.me/5581985503305?text=Ol%C3%A1%21%20Vi%20a%20p%C3%A1gina%20Pedagogia%20Gamificada%20e%20tenho%20interesse%20no%20plano%20Completo." target="_blank" rel="noopener">Quero o Completo</a></div>
-      </div>
-    </div>
-  </section>
-
-  <section style="padding-top:0">
-    <div class="wrap">
-      <h2 class="rv">Como funciona a implantação</h2>
-      <ol class="steps">
-        <li class="rv">Diagnóstico<span>Conteúdos e necessidades dos alunos</span></li>
-        <li class="rv">Personalização<span>Identidade do professor ou da escola</span></li>
-        <li class="rv">Teste<span>Com um pequeno grupo</span></li>
-        <li class="rv">Uso regular<span>Em sala, na terapia e em casa</span></li>
-        <li class="rv">Análise<span>Relatórios revisados todo mês</span></li>
+<!-- IDENTIFICAÇÃO PRECOCE -->
+<section id="identificar-cedo" class="cedo">
+  <div class="wrap duas">
+    <div class="revelar">
+      <span class="tag">Identificação precoce</span>
+      <h2>Com os jogos, a escola identifica as dificuldades logo no início</h2>
+      <p class="lead">Não é preciso esperar a prova do bimestre. Já nas primeiras partidas, o painel mostra quais habilidades estão abaixo do esperado em cada turma e em cada aluno. Assim a escola age cedo, quando ajudar é mais simples.</p>
+      <ol class="passos-cedo">
+        <li><span class="num">1</span><div><b>O aluno joga</b>Partidas curtas, na sala, na terapia ou em casa.</div></li>
+        <li><span class="num">2</span><div><b>O app aponta os sinais</b>Habilidades abaixo de 60% de acerto aparecem em destaque, como visão espacial, lateralidade, atenção ou leitura.</div></li>
+        <li><span class="num">3</span><div><b>A escola age cedo</b>Anamnese, plano de objetivos com os jogos certos e conversa com a família, tudo na mesma plataforma.</div></li>
       </ol>
-      <div class="lgpd rv"><span aria-hidden="true">🔒</span><p style="margin:0">Segue a LGPD: coletamos apenas o necessário, com consentimento dos responsáveis, e os relatórios são usados só para fins pedagógicos.</p></div>
+      <p class="nota-cedo"><i class="ph-fill ph-info" aria-hidden="true"></i> Os jogos não fazem diagnóstico. Eles mostram sinais que ajudam o professor e a psicopedagoga a decidir o que investigar e como ajudar.</p>
     </div>
-  </section>
+    <div class="revelar" style="max-width:300px;margin:0 auto;width:100%">
+      <div class="moldura"><img src="assets/prints/ge07-painel.webp" alt="Painel da turma com o quadro Onde a turma tem mais dificuldade: visão espacial, lateralidade e leitura" loading="lazy" width="480" height="984"></div>
+    </div>
+  </div>
+</section>
 
-  <section style="padding-top:0">
-    <div class="wrap">
-      <div class="cta rv">
-        <img src="assets/logo.webp" width="420" height="420" alt="">
-        <h2>Vamos criar o app da sua escola?</h2>
-        <p>Solicite seu aplicativo ou tire suas dúvidas pelo WhatsApp.</p>
-        <a class="btn btn-wa" href="https://wa.me/5581985503305?text=Ol%C3%A1%21%20Vi%20a%20p%C3%A1gina%20Pedagogia%20Gamificada%20e%20quero%20solicitar%20meu%20app%20/%20tirar%20d%C3%BAvidas." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.05 4.91A9.82 9.82 0 0 0 12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01Zm-7.01 15.24h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.23 8.23 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.25-8.23a8.2 8.2 0 0 1 8.23 8.24c0 4.54-3.7 8.23-8.23 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.17.24-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.24 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28Z"/></svg> Solicite seu app / Dúvidas</a>
-        <span class="phone">(81) 98550-3305</span>
+<!-- RELATÓRIO -->
+<section id="relatorio">
+  <div class="wrap duas">
+    <div class="revelar">
+      <span class="tag">O aluno joga, o professor analisa</span>
+      <h2>Você descobre as dificuldades sem corrigir nada</h2>
+      <p class="lead">No fim de cada partida, o app gera um relatório com acertos, erros, tempo de resposta e o que cada aluno precisa revisar.</p>
+      <ul class="lista-check">
+        <li><b>Painel da turma</b> com 7, 30 ou 90 dias e 12 meses.</li>
+        <li><b>Ficha de cada aluno</b> com o que ele mais errou e o que respondeu.</li>
+        <li><b>Anamnese e plano de objetivos</b> em PDF, para a psicopedagoga e a escola.</li>
+        <li><b>Relatório no e-mail</b> e em PDF, pronto para a reunião com a família.</li>
+      </ul>
+    </div>
+    <div class="relatorio revelar" aria-label="Exemplo de relatório">
+      <h3>📊 Polícia · Davi, 8 anos</h3>
+      <p style="color:var(--muted);font-size:.9rem;margin-bottom:14px">Exemplo ilustrativo de relatório</p>
+      <div class="kpis">
+        <div class="kpi"><b>74%</b><small>de acertos</small></div>
+        <div class="kpi"><b>3</b><small>níveis vencidos</small></div>
+        <div class="kpi"><b>1,9 s</b><small>por decisão</small></div>
+      </div>
+      <div class="barra" style="--c:var(--green)"><small><span>Setas no lugar</span><span>95%</span></small><div><i style="width:95%"></i></div></div>
+      <div class="barra" style="--c:var(--blue)"><small><span>Setas trocadas</span><span>78%</span></small><div><i style="width:78%"></i></div></div>
+      <div class="barra" style="--c:var(--orange)"><small><span>Logo depois da troca</span><span>58%</span></small><div><i style="width:58%"></i></div></div>
+      <div class="barra" style="--c:var(--red)"><small><span>Resposta antes de olhar</span><span>9 vezes</span></small><div><i style="width:45%"></i></div></div>
+      <div class="foco">🎯 Para treinar: pensar antes de agir quando a regra muda. Sugestão: Setas e cores, nível 2.</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- POR DENTRO DA PLATAFORMA (prints do manual) -->
+<section id="plataforma" class="alt">
+  <div class="wrap">
+    <div class="center revelar">
+      <span class="tag">Por dentro da plataforma</span>
+      <h2>Tudo o que a escola e a psicopedagoga precisam, num lugar só</h2>
+      <p class="lead">Turmas, painel, ficha do aluno, anamnese, plano de objetivos e área da família. Funciona no computador, no tablet e no celular.</p>
+    </div>
+    <div class="carrossel">
+      <div class="faixa-jogos faixa-prints" id="faixa-prints" tabindex="0" aria-label="Prints da plataforma">
+        <figure class="print"><div class="moldura"><img src="assets/prints/ge07-painel.webp" alt="Print da plataforma: Painel da turma" loading="lazy" width="480" height="984"></div>
+          <figcaption><span class="ico-mini"><i class="ph-fill ph-chart-bar" aria-hidden="true"></i></span><b>Painel da turma</b>Onde a turma tem mais dificuldade, por habilidade, em 7, 30 ou 90 dias e 12 meses.</figcaption></figure>
+        <figure class="print"><div class="moldura"><img src="assets/prints/ge08-ficha.webp" alt="Print da plataforma: Ficha do aluno" loading="lazy" width="480" height="984"></div>
+          <figcaption><span class="ico-mini"><i class="ph-fill ph-student" aria-hidden="true"></i></span><b>Ficha do aluno</b>A evolução de cada criança semana a semana e o que ela precisa revisar.</figcaption></figure>
+        <figure class="print"><div class="moldura"><img src="assets/prints/ge11-anamnese.webp" alt="Print da plataforma: Anamnese" loading="lazy" width="480" height="984"></div>
+          <figcaption><span class="ico-mini"><i class="ph-fill ph-clipboard-text" aria-hidden="true"></i></span><b>Anamnese</b>Questionário de anamnese na plataforma, preenchido pela escola ou enviado por link para a família.</figcaption></figure>
+        <figure class="print"><div class="moldura"><img src="assets/prints/ge15-plano-editor.webp" alt="Print da plataforma: Plano de objetivos" loading="lazy" width="480" height="984"></div>
+          <figcaption><span class="ico-mini"><i class="ph-fill ph-target" aria-hidden="true"></i></span><b>Plano de objetivos</b>Objetivos com habilidades-alvo e jogos sugeridos, impressos em PDF para assinar.</figcaption></figure>
+        <figure class="print"><div class="moldura"><img src="assets/prints/g25-lista-habilidades.webp" alt="Print da plataforma: Jogos por habilidade" loading="lazy" width="480" height="984"></div>
+          <figcaption><span class="ico-mini"><i class="ph-fill ph-game-controller" aria-hidden="true"></i></span><b>Jogos por habilidade</b>A criança escolhe o que quer treinar: “Lembrar”, “Planejar”, “Posição e espaço”…</figcaption></figure>
+        <figure class="print"><div class="moldura"><img src="assets/prints/f03-filho.webp" alt="Print da plataforma: Área da família" loading="lazy" width="480" height="984"></div>
+          <figcaption><span class="ico-mini"><i class="ph-fill ph-users-three" aria-hidden="true"></i></span><b>Área da família</b>Os pais acompanham os jogos, os recados, o plano e a anamnese, no que a escola liberar.</figcaption></figure>
+        <figure class="print"><div class="moldura"><img src="assets/prints/ge33-ia-popup.webp" alt="Print da plataforma: Perguntas com IA" loading="lazy" width="480" height="984"></div>
+          <figcaption><span class="ico-mini"><i class="ph-fill ph-sparkle" aria-hidden="true"></i></span><b>Perguntas com IA</b>Tire uma foto do livro ou envie um PDF e a IA cria as perguntas da aula.</figcaption></figure>
+      </div>
+      <div class="setas">
+        <button class="seta" id="ant-prints" aria-label="Print anterior">‹</button>
+        <div class="pontos" id="pontos-prints"></div>
+        <button class="seta" id="prox-prints" aria-label="Próximo print">›</button>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
+<!-- IDENTIDADE VISUAL DA ESCOLA -->
+<section id="sua-escola">
+  <div class="wrap duas">
+    <div class="revelar">
+      <span class="tag">Com a cara da sua escola</span>
+      <h2>A plataforma vai com a identidade visual da sua escola</h2>
+      <p class="lead">O aluno e a família não entram em “mais um app”: eles entram no app da escola, com o logo, o nome e as cores que já conhecem.</p>
+      <ul class="lista-check">
+        <li><b>Logo e nome da escola</b> na entrada, no topo das telas e nos relatórios.</li>
+        <li><b>As cores da escola</b> nos botões e nos menus.</li>
+        <li><b>Links com a marca:</b> o convite das competições, os questionários e o cadastro da família já abrem com a cara da escola.</li>
+        <li><b>Cada escola vê só os seus dados</b>, com o próprio e-mail e senha de cada professor.</li>
+      </ul>
+      <p style="color:var(--muted);font-size:.92rem;margin-top:16px">Nas imagens, o “Colégio Aurora” é uma escola de exemplo, com o roxo como cor da marca.</p>
+    </div>
+    <div class="revelar duplas-tela">
+      <div class="moldura"><img src="assets/prints/ge01-login.webp" alt="Tela de entrada com o logo e o nome do Colégio Aurora, em roxo" loading="lazy" width="480" height="984"></div>
+      <div class="moldura"><img src="assets/prints/ge07-painel.webp" alt="Painel da turma com o topo roxo e o nome Colégio Aurora" loading="lazy" width="480" height="984"></div>
+    </div>
+  </div>
+</section>
+
+<!-- VÍDEOS -->
+<section id="videos" class="alt">
+  <div class="wrap">
+    <div class="center revelar">
+      <span class="tag">Vídeos</span>
+      <h2>Veja a plataforma funcionando</h2>
+      <p class="lead">Os jogos do lado do aluno e a área de gestão do lado da escola.</p>
+    </div>
+    <div class="duas" style="margin-top:36px;align-items:start">
+      <div class="revelar">
+        <button class="yt" type="button" data-video="Ch8QlP4UpyI" aria-label="Assistir o vídeo de apresentação dos jogos">
+          <img src="https://i.ytimg.com/vi/Ch8QlP4UpyI/hqdefault.jpg" alt="" width="480" height="360" loading="lazy">
+          <span class="play" aria-hidden="true"></span><span class="rotulo"><i class="ph-fill ph-game-controller" aria-hidden="true"></i> Os jogos</span>
+        </button>
+        <h3 style="margin-top:14px">Apresentação dos jogos</h3>
+        <p style="color:var(--muted)">Como a criança escolhe a habilidade, joga e vê o progresso.</p>
+      </div>
+      <div class="revelar">
+        <button class="yt" type="button" data-video="Po1L_m7XyQw" aria-label="Assistir o vídeo da área de gestão">
+          <img src="https://i.ytimg.com/vi/Po1L_m7XyQw/hqdefault.jpg" alt="" width="480" height="360" loading="lazy">
+          <span class="play" aria-hidden="true"></span><span class="rotulo"><i class="ph-fill ph-chalkboard-teacher" aria-hidden="true"></i> A gestão</span>
+        </button>
+        <h3 style="margin-top:14px">Área de gestão</h3>
+        <p style="color:var(--muted)">Em 3 minutos: como os jogos ajudam a identificar cedo as dificuldades, o painel, a anamnese e o plano de objetivos, os questionários com IA, as competições e a área da família.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPETIÇÕES (recurso extra) -->
+<section id="competicoes">
+  <div class="wrap duas">
+    <div class="revelar" aria-hidden="true">
+      <div class="celular">
+        <div class="tela">
+          <div class="etapa ativa">
+            <div class="titulo-tela">📷 Foto da página</div>
+            <div class="pagina-livro">
+              <b>Regiões do Brasil</b>
+              O Brasil é dividido em cinco regiões: Norte, Nordeste, Centro-Oeste, Sudeste e Sul.
+              <div class="linha-txt"></div><div class="linha-txt" style="width:80%"></div><div class="linha-txt"></div><div class="linha-txt" style="width:60%"></div><div class="linha-txt"></div><div class="linha-txt" style="width:70%"></div>
+            </div>
+            <div class="botao-foto">📸</div>
+          </div>
+          <div class="etapa">
+            <div class="titulo-tela">✨ Perguntas criadas</div>
+            <div class="gerando">10 perguntas · nível médio</div>
+            <div class="pergunta">Quantas regiões tem o Brasil?<span>✔ Cinco</span></div>
+            <div class="pergunta">Qual região fica mais ao sul?<span>✔ Sul</span></div>
+            <div class="pergunta">Brasília fica em qual região?<span>✔ Centro-Oeste</span></div>
+            <div class="pergunta">Qual é a maior região?<span>✔ Norte</span></div>
+          </div>
+          <div class="etapa">
+            <div class="titulo-tela">🏆 Ranking · 4º ano B</div>
+            <ol class="rank">
+              <li>🥇 Ana Luísa <span class="pts">980</span></li>
+              <li>🥈 Pedro <span class="pts">940</span></li>
+              <li>🥉 Maria Clara <span class="pts">910</span></li>
+              <li>4º Davi <span class="pts">870</span></li>
+              <li>5º Helena <span class="pts">850</span></li>
+            </ol>
+          </div>
+        </div>
+      </div>
+      <div class="indicadores"><span class="ativa"></span><span></span><span></span></div>
+    </div>
+    <div class="revelar">
+      <span class="extra"><i class="ph-fill ph-sparkle" aria-hidden="true"></i> Recurso extra para o professor</span>
+      <h2>Uma foto do livro vira competição da turma</h2>
+      <p class="lead">Fotografe a página, o exercício ou o quadro, ou envie um PDF. A IA cria as perguntas, você revisa e abre uma competição com ranking. Também dá para competir em qualquer um dos jogos.</p>
+      <ul class="lista-check">
+        <li><b>Foto ou PDF:</b> até 6 arquivos. Você escolhe 5, 10 ou 15 perguntas, a dificuldade, a matéria e o ano.</li>
+        <li><b>Convite pelo WhatsApp</b> com o código da turma. O link abre com a marca da escola.</li>
+        <li><b>Ranking com 🥇🥈🥉:</b> o aluno pode jogar de novo e vale a melhor partida.</li>
+        <li><b>Prazo definido</b> por você. O relatório chega no seu e-mail.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- FOTOS DOS ALUNOS -->
+<section class="alt">
+  <div class="wrap">
+    <div class="center revelar">
+      <span class="tag">Na sala de aula</span>
+      <h2>Alunos jogando e aprendendo</h2>
+      <p class="lead">Na sala, na terapia ou em casa, com o celular, o tablet ou o computador.</p>
+    </div>
+    <div class="galeria">
+      <figure class="foto-aluno revelar"><img src="assets/fotos/aluno-1.jpg" alt="Psicopedagoga acompanha uma criança jogando no tablet" loading="lazy" style="object-position:center 30%"><figcaption><i class="ph-fill ph-brain" aria-hidden="true"></i> Na terapia, a psicopedagoga acompanha cada jogada.</figcaption></figure>
+      <figure class="foto-aluno revelar"><img src="assets/fotos/aluno-2.jpg" alt="Alunos jogando Copie a grade e Polícia em tablets na sala de aula" loading="lazy"><figcaption><i class="ph-fill ph-chalkboard-teacher" aria-hidden="true"></i> Na sala, a turma toda joga ao mesmo tempo nos tablets.</figcaption></figure>
+      <figure class="foto-aluno revelar"><img src="assets/fotos/aluno-3.jpg" alt="Menina jogando Pilhas de cores no tablet" loading="lazy" style="object-position:center 60%"><figcaption><i class="ph-fill ph-flag-checkered" aria-hidden="true"></i> Pilhas de cores: planejar cada movimento e não desistir.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- PARA QUEM -->
+<section>
+  <div class="wrap">
+    <div class="center revelar">
+      <span class="tag">Para quem é</span>
+      <h2>Para escolas, psicopedagogos e famílias</h2>
+    </div>
+    <div class="publico">
+      <div class="revelar"><div class="ico" style="--c:#1E88E5"><i class="ph-fill ph-chalkboard-teacher" aria-hidden="true"></i></div><h3>Escolas</h3><p>Turmas, professores e coordenação em um só lugar, com a marca da escola em todos os links.</p></div>
+      <div class="revelar"><div class="ico" style="--c:#7B4FC9"><i class="ph-fill ph-brain" aria-hidden="true"></i></div><h3>Psicopedagogos</h3><p>Jogos de funções executivas com relatório, anamnese e plano de objetivos em PDF.</p></div>
+      <div class="revelar"><div class="ico" style="--c:#F28C18"><i class="ph-fill ph-users-three" aria-hidden="true"></i></div><h3>Famílias</h3><p>Os pais acompanham os jogos e os recados, no que a escola liberar.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- DÚVIDAS -->
+<section id="duvidas" class="alt">
+  <div class="wrap">
+    <div class="center revelar">
+      <span class="tag">Dúvidas</span>
+      <h2>Perguntas frequentes</h2>
+    </div>
+    <div class="faq">
+      <details><summary>O aluno precisa instalar algum aplicativo?</summary><p>Não. Os jogos abrem no navegador do celular, do tablet ou do computador. Se quiser, dá para colocar o ícone na tela inicial, como um aplicativo.</p></details>
+      <details><summary>Para qual idade são os jogos?</summary><p>De 4 a 14 anos. Cada jogo tem níveis do fácil ao difícil, e a criança avança no próprio ritmo.</p></details>
+      <details><summary>Os jogos servem para crianças com TDAH, TEA ou dificuldades de aprendizagem?</summary><p>Sim. As partidas são curtas, o erro não é punido e o relatório ajuda o professor e a psicopedagoga a acompanhar cada criança. Os jogos não fazem diagnóstico: eles apoiam o trabalho do profissional.</p></details>
+      <details><summary>Como funciona a competição a partir de uma foto?</summary><p>Você fotografa a página ou envia um PDF, a IA cria as perguntas e você revisa antes de salvar. Depois escolhe a turma e o prazo e manda o convite. A foto não fica guardada.</p></details>
+      <details><summary>E a LGPD?</summary><p>Coletamos apenas o necessário. Cada escola vê só os próprios dados, e a escola pode desligar o registro das partidas por turma ou por aluno.</p></details>
+      <details><summary>Como faço para testar?</summary><p>Toque em “Jogar agora” para conhecer os jogos. Para usar com a turma, fale com a gente pelo WhatsApp e a gente libera o acesso da sua escola para testar grátis.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- CHAMADA FINAL -->
+<section class="final">
+  <div class="wrap revelar">
+    <h2>Que tal ver os seus alunos jogando e aprendendo?</h2>
+    <p>Teste grátis com a sua turma. Sem compromisso.</p>
+    <div class="btns">
+      <a class="btn btn-main js-zap" href="#">Clique para testar grátis</a>
+      <a class="btn btn-line js-app" href="#"><i class="ph-fill ph-play" aria-hidden="true"></i> Jogar agora</a>
+    </div>
+  </div>
+</section>
+
 </main>
 
-<footer>© <span id="ano"></span> Pedagogia Gamificada · Exemplos desenvolvidos por Marco Nunes</footer>
+<footer>
+  <div class="wrap">
+    <span>© Games Pedagógicos · Pedagogia Gamificada</span>
+    <span>WhatsApp <a class="js-zap" href="#">(81) 98550-3305</a></span>
+  </div>
+</footer>
 
-<a class="fab" id="fab" href="https://wa.me/5581985503305?text=Ol%C3%A1%21%20Vi%20a%20p%C3%A1gina%20Pedagogia%20Gamificada%20e%20quero%20solicitar%20meu%20app%20/%20tirar%20d%C3%BAvidas." target="_blank" rel="noopener" aria-label="Falar no WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.05 4.91A9.82 9.82 0 0 0 12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01Zm-7.01 15.24h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.23 8.23 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.25-8.23a8.2 8.2 0 0 1 8.23 8.24c0 4.54-3.7 8.23-8.23 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.17.24-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.24 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28Z"/></svg></a>
+<a class="zap js-zap" href="#" aria-label="Falar no WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3C9 3 3.3 8.7 3.3 15.7c0 2.5.7 4.9 2 7L3 29l6.5-2.1c2 1.1 4.2 1.7 6.5 1.7 7 0 12.7-5.7 12.7-12.7S23 3 16 3zm0 23.2c-2.1 0-4.1-.6-5.8-1.7l-.4-.3-3.9 1.3 1.3-3.8-.3-.4c-1.2-1.8-1.9-3.9-1.9-6.1C5 9.6 9.9 4.8 16 4.8S27 9.6 27 15.7 22.1 26.2 16 26.2zm6-7.8c-.3-.2-2-1-2.3-1.1-.3-.1-.5-.2-.8.2-.2.3-.9 1.1-1.1 1.3-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.7-1.7-1-.9-1.7-2-1.9-2.3-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.3.3-.6.1-.2 0-.4 0-.6l-1.1-2.6c-.3-.7-.6-.6-.8-.6h-.7c-.2 0-.6.1-.9.4-.3.3-1.2 1.2-1.2 2.9s1.2 3.4 1.4 3.6c.2.2 2.4 3.7 5.9 5.2 3.5 1.4 3.5.9 4.1.9.6-.1 2-.8 2.3-1.6.3-.8.3-1.5.2-1.6-.1-.2-.3-.3-.6-.4z"/></svg></a>
 
 <script>
 (function(){
-  document.getElementById('ano').textContent = new Date().getFullYear();
-  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // Links: WhatsApp com mensagem pronta e o app dos jogos
+  var zap = 'https://wa.me/5581985503305?text=' + encodeURIComponent('Olá! Vi o site dos Games Pedagógicos e quero testar grátis.');
+  var app = 'https://gamespedagogicos.store/';
+  document.querySelectorAll('.js-zap').forEach(function(a){ a.href = zap; a.target = '_blank'; a.rel = 'noopener'; });
+  document.querySelectorAll('.js-app').forEach(function(a){ a.href = app; a.target = '_blank'; a.rel = 'noopener'; });
 
-  // XP bar
-  setTimeout(function(){
-    var f=document.getElementById('xpFill'), t=document.getElementById('xpTxt'), target=88;
-    f.style.width=target+'%';
-    if(reduce){t.textContent=target+'%';return;}
-    var v=0, id=setInterval(function(){v+=2; if(v>=target){v=target;clearInterval(id);} t.textContent=v+'%';},36);
-  },400);
-
-  // Reveal + counters
-  var counted=false;
-  function count(){
-    if(counted) return; counted=true;
-    document.querySelectorAll('[data-n]').forEach(function(el){
-      var n=parseFloat(el.dataset.n), d=+(el.dataset.d||0), s=el.dataset.s||'';
-      var fmt=function(x){return x.toFixed(d).replace('.',',')+s;};
-      if(reduce){el.textContent=fmt(n);return;}
-      var start=null;
-      function step(ts){ if(!start) start=ts; var p=Math.min((ts-start)/1200,1);
-        el.textContent=fmt(n*(1-Math.pow(1-p,3))); if(p<1) requestAnimationFrame(step); }
-      requestAnimationFrame(step);
-    });
-  }
-  if('IntersectionObserver' in window){
-    var io=new IntersectionObserver(function(es){
-      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
-    },{threshold:.15});
-    document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});
-    var rio=new IntersectionObserver(function(es){ if(es[0].isIntersecting){count();rio.disconnect();} },{threshold:.3});
-    rio.observe(document.querySelector('.stats'));
-  } else {
-    document.querySelectorAll('.rv').forEach(function(el){el.classList.add('in');}); count();
-  }
-
-  // Carrossel dos jogos: setas, bolinhas, teclado e deslizar com o dedo (rolagem nativa)
-  var trilho=document.getElementById('trilho'), cards=[].slice.call(trilho.children);
-  var pontos=document.getElementById('pontos'), ant=document.getElementById('ant'), prox=document.getElementById('prox');
-  cards.forEach(function(c,i){
-    var b=document.createElement('button'); b.type='button';
-    b.setAttribute('aria-label','Ver '+c.querySelector('h3').textContent);
-    b.onclick=function(){ir(i);}; pontos.appendChild(b);
+  // Vídeos do YouTube: troca a capa pelo player só quando tocar
+  document.querySelectorAll('.yt').forEach(function(b){
+    b.addEventListener('click', function(){
+      var f = document.createElement('iframe');
+      f.src = 'https://www.youtube-nocookie.com/embed/' + b.dataset.video + '?autoplay=1&rel=0&playsinline=1';
+      f.title = b.getAttribute('aria-label');
+      f.allow = 'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen';
+      f.allowFullscreen = true;
+      b.replaceChildren(f); b.style.cursor = 'default';
+    }, {once: true});
   });
-  function passo(){ return cards.length>1 ? cards[1].offsetLeft-cards[0].offsetLeft : trilho.clientWidth; }
-  function ir(i){ i=Math.max(0,Math.min(cards.length-1,i)); trilho.scrollTo({left:cards[i].offsetLeft-cards[0].offsetLeft,behavior:reduce?'auto':'smooth'}); }
-  function atualizar(){
-    var i=Math.round(trilho.scrollLeft/passo()), fim=trilho.scrollLeft>=trilho.scrollWidth-trilho.clientWidth-4;
-    [].forEach.call(pontos.children,function(b,k){ b.setAttribute('aria-current', String(k===i || (fim && k>i))); });
-    ant.disabled=trilho.scrollLeft<=4; prox.disabled=fim;
-  }
-  ant.onclick=function(){ ir(Math.round(trilho.scrollLeft/passo())-1); };
-  prox.onclick=function(){ ir(Math.round(trilho.scrollLeft/passo())+1); };
-  trilho.addEventListener('keydown',function(e){ if(e.key==='ArrowRight'){e.preventDefault();prox.click();} if(e.key==='ArrowLeft'){e.preventDefault();ant.click();} });
-  trilho.addEventListener('scroll',atualizar,{passive:true});
-  window.addEventListener('resize',atualizar);
-  atualizar();
 
-  // Floating WhatsApp button after scrolling past hero
-  var fab=document.getElementById('fab');
-  function onScroll(){ fab.classList.toggle('on', window.scrollY>window.innerHeight*.6); }
-  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+  // Celular das competições: foto → perguntas → ranking
+  var etapas = document.querySelectorAll('.etapa'), inds = document.querySelectorAll('.indicadores span'), e = 0;
+  var calmo = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!calmo) setInterval(function(){
+    etapas[e].classList.remove('ativa'); inds[e].classList.remove('ativa');
+    e = (e + 1) % etapas.length;
+    etapas[e].classList.add('ativa'); inds[e].classList.add('ativa');
+  }, 3200);
+
+  // Fotos: enquanto o arquivo não existir, mostra o quadro tracejado
+  document.querySelectorAll('[data-midia]').forEach(function(box){
+    var m = box.querySelector('img');
+    function falhou(){ box.classList.add('sem-arquivo'); }
+    if (m.complete && !m.naturalWidth) falhou();
+    m.addEventListener('error', falhou);
+  });
+
+  // Carrosséis (jogos e prints): setas, bolinhas e deslizar com o dedo (rolagem nativa)
+  function carrossel(idFaixa, idAnt, idProx, idPontos){
+    var faixa = document.getElementById(idFaixa), pontos = document.getElementById(idPontos), cards = faixa.children;
+    function passo(){ return cards[1].offsetLeft - cards[0].offsetLeft; }
+    function porTela(){ return Math.max(1, Math.round(faixa.clientWidth / passo())); }
+    function paginas(){ return Math.max(1, cards.length - porTela() + 1); }
+    function marcar(){
+      var i = Math.round(faixa.scrollLeft / passo());
+      [].forEach.call(pontos.children, function(b, k){ b.setAttribute('aria-current', String(k === Math.min(i, paginas() - 1))); });
+    }
+    function montarPontos(){
+      pontos.innerHTML = '';
+      for (var i = 0; i < paginas(); i++) { var b = document.createElement('button'); b.setAttribute('aria-label', 'Ir para o item ' + (i + 1)); (function(k){ b.onclick = function(){ faixa.scrollTo({left: k * passo()}); }; })(i); pontos.appendChild(b); }
+      marcar();
+    }
+    document.getElementById(idAnt).onclick = function(){ faixa.scrollBy({left: -passo()}); };
+    document.getElementById(idProx).onclick = function(){
+      if (faixa.scrollLeft + faixa.clientWidth >= faixa.scrollWidth - 4) faixa.scrollTo({left: 0}); else faixa.scrollBy({left: passo()});
+    };
+    faixa.addEventListener('keydown', function(ev){ if (ev.key === 'ArrowRight') { ev.preventDefault(); faixa.scrollBy({left: passo()}); } if (ev.key === 'ArrowLeft') { ev.preventDefault(); faixa.scrollBy({left: -passo()}); } });
+    faixa.addEventListener('scroll', function(){ window.requestAnimationFrame(marcar); });
+    window.addEventListener('resize', montarPontos);
+    montarPontos();
+  }
+  carrossel('faixa-jogos', 'ant', 'prox', 'pontos');
+  carrossel('faixa-prints', 'ant-prints', 'prox-prints', 'pontos-prints');
+
+  // Aparecer ao rolar
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(es){ es.forEach(function(x){ if (x.isIntersecting) { x.target.classList.add('visivel'); io.unobserve(x.target); } }); }, {threshold: .12});
+    document.querySelectorAll('.revelar').forEach(function(el){ io.observe(el); });
+  } else document.querySelectorAll('.revelar').forEach(function(el){ el.classList.add('visivel'); });
+
+  // Botão flutuante do WhatsApp depois do topo
+  var zapBtn = document.querySelector('.zap'), hero = document.querySelector('.hero');
+  window.addEventListener('scroll', function(){ zapBtn.classList.toggle('mostrar', window.scrollY > hero.offsetHeight - 100); }, {passive: true});
 })();
 </script>
 </body>

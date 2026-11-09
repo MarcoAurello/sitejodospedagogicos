@@ -1,24 +1,28 @@
-# Pedagogia Gamificada
+# Games Pedagógicos · site
 
-Página de apresentação dos aplicativos educacionais com jogos e relatórios
-para escolas, professores e psicopedagogos.
+Landing page da plataforma de jogos psicopedagógicos para crianças de 4 a 14 anos:
+jogos, habilidades, identificação precoce das dificuldades, prints da plataforma,
+identidade visual da escola, vídeos e competições criadas a partir de uma foto ou PDF.
 
-- Site: https://sitejodospedagogicos.vercel.app/
-- Jogos de exemplo (num carrossel): [Let’s play with Mallu](https://marcoaurello.github.io/inglesdamallu/),
-  [Desafio das Peças com a Nágila](https://marcoaurello.github.io/jogoTabuleiro/),
-  [My Day — English Academy](https://routinesgame.vercel.app/),
-  [ABC da Tia ANA](https://abcdaana.vercel.app/) e
-  [Jogo de Ortografia do Pleno](https://marcoaurello.github.io/jogoOrtografia/)
-- Contato: WhatsApp (81) 98550-3305
-
-## Na VPS (Dokploy)
-
-O `Dockerfile` serve a página na raiz do domínio. Os jogos ficam no mesmo servidor, cada um como uma aplicação do Dokploy:
-`/myday/` (DailyRoutinesGame), `/abc/` (jogoABC), `/ortografia/` (jogoOrtografia), `/desafio/` (jogoTabuleiro) e `/domino/` (inglesdamallu).
+- App dos jogos: https://gamespedagogicos.store/
+- Vídeos: [apresentação](https://youtu.be/Ch8QlP4UpyI) e [área de gestão](https://youtu.be/Po1L_m7XyQw)
+- Contato: WhatsApp (81) 98550-3305 (botões "Clique para testar grátis")
 
 ## Arquivos
-- `index.html`: a página (HTML e CSS num arquivo só).
-- `assets/`: logo, imagem do relatório de exemplo, ícones e `og-image.jpg`
-  (a imagem que aparece quando o link é compartilhado no WhatsApp).
+- `index.html`: a página (HTML, CSS e JS num arquivo só).
+- `assets/jogos/`: capas dos jogos do carrossel.
+- `assets/prints/`: prints da plataforma (do manual do app).
+- `assets/fotos/`: fotos dos alunos usando o app.
+- `assets/icones/`: ícones Phosphor (fill), servidos localmente.
+- `assets/`: logo, favicon e `og-image.jpg` (imagem do link compartilhado).
 
-© Marco Nunes — Todos os direitos reservados
+## Ver no computador
+```
+python -m http.server 5510
+```
+e abra http://127.0.0.1:5510/
+
+## Na VPS (Dokploy)
+O `Dockerfile` serve a página com nginx na raiz do domínio (Build Type = Dockerfile, porta 80).
+
+© Marco Nunes. Todos os direitos reservados.
